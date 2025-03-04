@@ -2,6 +2,8 @@
 using NLog.Web;
 using System;
 using Microsoft.Extensions.Hosting;
+using BusinessLayer.Interface;
+using BusinessLayer.Services;
 
 //Setup the Nlog from nlog.config and start the Nlog
 var logger = NLog.LogManager.Setup().LoadConfigurationFromFile("nlog.config").GetCurrentClassLogger();
@@ -18,6 +20,7 @@ try
     builder.Host.UseNLog();
 
     // Add services to the container.
+    builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 
     builder.Services.AddControllers();
 

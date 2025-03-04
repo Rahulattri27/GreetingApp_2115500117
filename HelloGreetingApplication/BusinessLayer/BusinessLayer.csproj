@@ -18,4 +18,7 @@
     <Folder Include="Services\" />
     <Folder Include="Interface\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NLog.Web.AspNetCore" Version="5.4.0" />
+  </ItemGroup>
 </Project>

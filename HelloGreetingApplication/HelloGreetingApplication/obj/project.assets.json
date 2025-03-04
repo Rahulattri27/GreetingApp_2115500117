@@ -306,6 +306,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "ModelLayer": "1.0.0",
+          "NLog.Web.AspNetCore": "5.4.0",
           "RepositoryLayer": "1.0.0"
         },
         "compile": {

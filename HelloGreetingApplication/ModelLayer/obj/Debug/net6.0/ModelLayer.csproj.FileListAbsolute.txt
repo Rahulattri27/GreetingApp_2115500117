@@ -10,3 +10,15 @@
 /Users/rahulkumarair/Desktop/GreetingsApp/HelloGreetingApplication/ModelLayer/obj/Debug/net6.0/refint/ModelLayer.dll
 /Users/rahulkumarair/Desktop/GreetingsApp/HelloGreetingApplication/ModelLayer/obj/Debug/net6.0/ModelLayer.pdb
 /Users/rahulkumarair/Desktop/GreetingsApp/HelloGreetingApplication/ModelLayer/obj/Debug/net6.0/ref/ModelLayer.dll
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/bin/Debug/net6.0/ModelLayer.deps.json
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/bin/Debug/net6.0/ModelLayer.dll
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/bin/Debug/net6.0/ModelLayer.pdb
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/obj/Debug/net6.0/ModelLayer.csproj.AssemblyReference.cache
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/obj/Debug/net6.0/ModelLayer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/obj/Debug/net6.0/ModelLayer.AssemblyInfoInputs.cache
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/obj/Debug/net6.0/ModelLayer.AssemblyInfo.cs
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/obj/Debug/net6.0/ModelLayer.csproj.CoreCompileInputs.cache
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/obj/Debug/net6.0/ModelLayer.dll
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/obj/Debug/net6.0/refint/ModelLayer.dll
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/obj/Debug/net6.0/ModelLayer.pdb
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/obj/Debug/net6.0/ref/ModelLayer.dll
