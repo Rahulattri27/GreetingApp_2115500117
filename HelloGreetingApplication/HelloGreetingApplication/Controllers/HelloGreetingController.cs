@@ -145,9 +145,15 @@ namespace HelloGreetingApplication.Controllers;
         public IActionResult GetGreeting(string? FirstName, string? LastName)
     {
         _logger.LogInformation("Executing Get Greeting");
-        var message = _greetingBL.GreetingMessage(FirstName, LastName);
+        string message = _greetingBL.GreetingMessage(FirstName, LastName);
+        var response = new ResponseModel<string>
+        {
+            Success = true,
+            Message = $"Got the Personalized Greeting: {message}",
+            Data = message
+        };
         _logger.LogInformation("Returning response: {message}", message);
-        return Ok(new { message });
+        return Ok(new { response });
 
     }
     
