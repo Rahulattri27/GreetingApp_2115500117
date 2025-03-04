@@ -1,0 +1,21 @@
+2025-03-04 10:03:18.9461 | INFO | Starting the application 
+2025-03-04 10:03:19.4920 | INFO | Now listening on: https://localhost:7130 
+2025-03-04 10:03:19.4931 | INFO | Now listening on: http://localhost:5163 
+2025-03-04 10:03:19.4931 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-03-04 10:03:19.4942 | INFO | Hosting environment: Development 
+2025-03-04 10:03:19.4942 | INFO | Content root path: /Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/HelloGreetingApplication 
+2025-03-04 10:03:20.8625 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.html - - 
+2025-03-04 10:03:20.9388 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 76.3847ms 
+2025-03-04 10:03:20.9527 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.js - - 
+2025-03-04 10:03:20.9550 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.js - - - 200 - application/javascript;charset=utf-8 1.8065ms 
+2025-03-04 10:03:21.6167 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - 
+2025-03-04 10:03:21.7147 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 97.9190ms 
+2025-03-04 10:03:27.7834 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/HelloGreeting - - 
+2025-03-04 10:03:27.7943 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetMethod (HelloGreetingApplication)' 
+2025-03-04 10:03:27.8144 | INFO | Route matched with {action = "GetMethod", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetMethod() on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication). 
+2025-03-04 10:03:27.8180 | INFO | Executing Get Method 
+2025-03-04 10:03:27.8180 | INFO | Get request successful 
+2025-03-04 10:03:27.8216 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-04 10:03:27.8383 | INFO | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.GetMethod (HelloGreetingApplication) in 20.458ms 
+2025-03-04 10:03:27.8383 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetMethod (HelloGreetingApplication)' 
+2025-03-04 10:03:27.8386 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/HelloGreeting - - - 200 - application/json;+charset=utf-8 55.2210ms 
