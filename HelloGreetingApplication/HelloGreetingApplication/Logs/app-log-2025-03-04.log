@@ -100,3 +100,47 @@
 2025-03-04 08:26:35.8055 | INFO | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.Delete (HelloGreetingApplication) in 1.357ms 
 2025-03-04 08:26:35.8055 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.Delete (HelloGreetingApplication)' 
 2025-03-04 08:26:35.8055 | INFO | Request finished HTTP/1.1 DELETE https://localhost:7130/HelloGreeting/3 - - - 200 - application/json;+charset=utf-8 3.6862ms 
+2025-03-04 15:24:43.7458 | INFO | Starting the application 
+2025-03-04 15:24:44.3491 | INFO | Now listening on: https://localhost:7130 
+2025-03-04 15:24:44.3496 | INFO | Now listening on: http://localhost:5163 
+2025-03-04 15:24:44.3496 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-03-04 15:24:44.3496 | INFO | Hosting environment: Development 
+2025-03-04 15:24:44.3496 | INFO | Content root path: /Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/HelloGreetingApplication 
+2025-03-04 15:24:46.1912 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.html - - 
+2025-03-04 15:24:46.2664 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 75.9159ms 
+2025-03-04 15:24:46.2788 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.js - - 
+2025-03-04 15:24:46.2806 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.js - - - 200 - application/javascript;charset=utf-8 1.7340ms 
+2025-03-04 15:24:46.9587 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - 
+2025-03-04 15:24:47.0487 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 90.0898ms 
+2025-03-04 15:25:00.7820 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/HelloGreeting/PersonalizedGreeting?FirstName=Rahul - - 
+2025-03-04 15:25:00.7911 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetGreeting (HelloGreetingApplication)' 
+2025-03-04 15:25:00.8075 | INFO | Route matched with {action = "GetGreeting", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetGreeting(System.String, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication). 
+2025-03-04 15:25:00.8217 | INFO | Executing Get Greeting 
+2025-03-04 15:25:00.8226 | INFO | Generating Greeting Message 
+2025-03-04 15:25:00.8226 | INFO | Returning FirstName greeting 
+2025-03-04 15:25:00.8226 | INFO | Returning response: Hello Rahul  
+2025-03-04 15:25:00.8256 | INFO | Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-04 15:25:00.8380 | INFO | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.GetGreeting (HelloGreetingApplication) in 27.7796ms 
+2025-03-04 15:25:00.8380 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetGreeting (HelloGreetingApplication)' 
+2025-03-04 15:25:00.8380 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/HelloGreeting/PersonalizedGreeting?FirstName=Rahul - - - 200 - application/json;+charset=utf-8 56.2695ms 
+2025-03-04 15:25:06.0824 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/HelloGreeting/PersonalizedGreeting?FirstName=Rahul&LastName=Kumar - - 
+2025-03-04 15:25:06.0846 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetGreeting (HelloGreetingApplication)' 
+2025-03-04 15:25:06.0846 | INFO | Route matched with {action = "GetGreeting", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetGreeting(System.String, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication). 
+2025-03-04 15:25:06.0865 | INFO | Executing Get Greeting 
+2025-03-04 15:25:06.0865 | INFO | Generating Greeting Message 
+2025-03-04 15:25:06.0865 | INFO | Returning full name greeting 
+2025-03-04 15:25:06.0865 | INFO | Returning response: Hello Rahul Kumar 
+2025-03-04 15:25:06.0877 | INFO | Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-04 15:25:06.0887 | INFO | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.GetGreeting (HelloGreetingApplication) in 3.3655ms 
+2025-03-04 15:25:06.0887 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetGreeting (HelloGreetingApplication)' 
+2025-03-04 15:25:06.0887 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/HelloGreeting/PersonalizedGreeting?FirstName=Rahul&LastName=Kumar - - - 200 - application/json;+charset=utf-8 6.5654ms 
+2025-03-04 15:25:12.8134 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/HelloGreeting/PersonalizedGreeting - - 
+2025-03-04 15:25:12.8137 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetGreeting (HelloGreetingApplication)' 
+2025-03-04 15:25:12.8137 | INFO | Route matched with {action = "GetGreeting", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetGreeting(System.String, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication). 
+2025-03-04 15:25:12.8157 | INFO | Executing Get Greeting 
+2025-03-04 15:25:12.8157 | INFO | Generating Greeting Message 
+2025-03-04 15:25:12.8157 | INFO | Returning response: Hello, World 
+2025-03-04 15:25:12.8166 | INFO | Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-04 15:25:12.8166 | INFO | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.GetGreeting (HelloGreetingApplication) in 2.5132ms 
+2025-03-04 15:25:12.8166 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetGreeting (HelloGreetingApplication)' 
+2025-03-04 15:25:12.8166 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/HelloGreeting/PersonalizedGreeting - - - 200 - application/json;+charset=utf-8 3.9368ms 
