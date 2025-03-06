@@ -68,6 +68,17 @@ namespace BusinessLayer.Services
 			return _greetingRL.FindGreeting(id);
 			
 		}
+		//method to update the greeting on basis of id
+		public bool UpdateGreeting(int id,string Message)
+		{
+			var response = _greetingRL.FindGreeting(id);
+			if (response == null)
+			{
+				return false;
+			}
+			_greetingRL.UpdateGreeting(id, Message);
+			return true;
+		}
     }
 }
 

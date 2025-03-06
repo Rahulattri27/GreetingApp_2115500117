@@ -235,4 +235,29 @@ public class HelloGreetingController : ControllerBase
 
 
     }
+    /// <summary>
+    /// method to update the greeting by id
+    /// </summary>
+    /// <param name="id">id of greeting from user</param>
+    /// <param name="message">Updated greeting</param>
+    /// <returns>Success or Failure response</returns>
+    [HttpPatch("update/{id}")]
+    public IActionResult UpdateMessageById(int id,string message)
+    {
+        _logger.LogInformation("Executing the UpdateMessagebyId");
+        var result = _greetingBL.UpdateGreeting(id,message);
+        var response = new ResponseModel<string>();
+        if (result)
+        {
+            response.Success = true;
+            response.Message = "updated successfully";
+            response.Data = message;
+            return Ok(response);
+        }
+        response.Success = false;
+        response.Message = "updated unsuccessfull";
+        response.Data = null;
+        return Ok(response);
+
+    }
 }

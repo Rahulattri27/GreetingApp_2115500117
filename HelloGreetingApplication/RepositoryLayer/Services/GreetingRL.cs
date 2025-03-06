@@ -43,6 +43,18 @@ namespace RepositoryLayer.Services
 			_logger.LogInformation("Returning the greeting from database");
 			return greeting;
 		}
+		//method to update the greeting on id
+		public void UpdateGreeting(int id,string Message)
+		{
+			_logger.LogInformation($"updating the {id}");
+			var result = _context.Greetings.Find(id);
+			if (result != null)
+			{
+				result.Message = Message;
+				_context.SaveChanges();
+
+			}
+		}
 		
 	}
 }

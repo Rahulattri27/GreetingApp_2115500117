@@ -10,7 +10,7 @@ namespace BusinessLayer.Interface
 		string Create(GreetingModel greeting);
 		List<GreetingModel> GetDatabaseGreeting();
 		GreetingModel FindGreeting(int id);
-
+		bool UpdateGreeting(int id, string Message);
     }
 }
 
