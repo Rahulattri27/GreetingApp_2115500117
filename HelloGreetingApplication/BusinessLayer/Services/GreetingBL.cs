@@ -79,6 +79,12 @@ namespace BusinessLayer.Services
 			_greetingRL.UpdateGreeting(id, Message);
 			return true;
 		}
+		//method to delete the greeting on basis of id
+		public bool DeleteGreeting(int id)
+		{
+			_logger.LogInformation($"Sending{id} to Repository layer");
+			return _greetingRL.DeleteGreeting(id);
+		}
     }
 }
 

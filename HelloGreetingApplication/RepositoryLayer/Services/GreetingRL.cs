@@ -55,6 +55,21 @@ namespace RepositoryLayer.Services
 
 			}
 		}
+		//method to delete the greeting by id
+		public bool DeleteGreeting(int id)
+		{
+			_logger.LogInformation($"Deleting the {id}");
+			var result = _context.Greetings.Find(id);
+			if (result != null)
+			{
+				_logger.LogInformation($"Deletion complete{id}");
+				_context.Greetings.Remove(result);
+				_context.SaveChanges();
+				return true;
+
+			}
+			return false;
+		}
 		
 	}
 }

@@ -242,7 +242,7 @@ public class HelloGreetingController : ControllerBase
     /// <param name="message">Updated greeting</param>
     /// <returns>Success or Failure response</returns>
     [HttpPatch("update/{id}")]
-    public IActionResult UpdateMessageById(int id,string message)
+    public IActionResult UpdateGreetingById(int id,string message)
     {
         _logger.LogInformation("Executing the UpdateMessagebyId");
         var result = _greetingBL.UpdateGreeting(id,message);
@@ -258,6 +258,32 @@ public class HelloGreetingController : ControllerBase
         response.Message = "updated unsuccessfull";
         response.Data = null;
         return Ok(response);
+
+    }
+    /// <summary>
+    /// Method to delete the greeting on id
+    /// </summary>
+    /// <param name="id">id of greeting to delete</param>
+    /// <returns>Success or failure response</returns>
+    [HttpDelete("delete/{id}")]
+    public IActionResult DeleteGreeting(int id)
+    {
+        _logger.LogInformation("Executing DeleteGreeting in Controller");
+        bool result = _greetingBL.DeleteGreeting(id);
+        var response = new ResponseModel<string>();
+
+        if (result)
+        {
+            response.Success = true;
+            response.Message = $"{id} successfully deleted";
+            response.Data = null;
+            return Ok(response);
+        }
+        response.Success = false;
+        response.Message = $"{id} does not exist";
+        response.Data = null;
+        return Ok(response);
+
 
     }
 }

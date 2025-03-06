@@ -11,6 +11,7 @@ namespace BusinessLayer.Interface
 		List<GreetingModel> GetDatabaseGreeting();
 		GreetingModel FindGreeting(int id);
 		bool UpdateGreeting(int id, string Message);
+		bool DeleteGreeting(int id);
     }
 }
 
