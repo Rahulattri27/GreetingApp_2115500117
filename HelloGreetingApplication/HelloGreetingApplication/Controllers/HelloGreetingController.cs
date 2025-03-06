@@ -125,6 +125,10 @@ namespace HelloGreetingApplication.Controllers;
             _logger.LogInformation("Delete was successful");
             return Ok(response);
         }
+        /// <summary>
+        /// Get the Hello World as Greting
+        /// </summary>
+        /// <returns>Hello World</returns>
 
         [HttpGet("SimpleGreeting")]
         public IActionResult GetSimpleGreeting()
@@ -141,6 +145,12 @@ namespace HelloGreetingApplication.Controllers;
             return Ok(response);
 
         }
+        /// <summary>
+        /// Method to greeting with name or default Hello World
+        /// </summary>
+        /// <param name="FirstName">first name of user</param>
+        /// <param name="LastName">Last name of user</param>
+        /// <returns>Greeting message with name</returns>
         [HttpGet("PersonalizedGreeting")]
         public IActionResult GetGreeting(string? FirstName, string? LastName)
     {
@@ -153,8 +163,43 @@ namespace HelloGreetingApplication.Controllers;
             Data = message
         };
         _logger.LogInformation("Returning response: {message}", message);
-        return Ok(new { response });
+        return Ok(response );
 
     }
-    
- }
+    /// <summary>
+    /// Method to create the greeting in database
+    /// </summary>
+    /// <param name="greeting">Greeting message from user</param>
+    /// <returns>Created Successfully Message</returns>
+    [HttpPost("AddNew")]
+    public IActionResult CreateGreeting(GreetingModel greeting)
+    {
+        _logger.LogInformation("Creating the greeting in database");
+        string message = _greetingBL.Create(greeting);
+        var response = new ResponseModel<string>
+        {
+            Success = true,
+            Message = "Greeting added to database",
+            Data = message
+        };
+        _logger.LogInformation("Returning response: {message}", message);
+        return Ok( response );
+
+    }
+    [HttpGet("Greetings")]
+    public IActionResult GetGreetings()
+    {
+        _logger.LogInformation("Get the Greeting from database");
+        var result = _greetingBL.GetDatabaseGreeting();
+        var response = new ResponseModel<List<GreetingModel>>
+        {
+            Success = true,
+            Message = "Get the Greetings from Database",
+            Data = result
+        };
+        _logger.LogInformation("Returning Database Greetings");
+        return Ok(response);
+        
+    }
+
+}

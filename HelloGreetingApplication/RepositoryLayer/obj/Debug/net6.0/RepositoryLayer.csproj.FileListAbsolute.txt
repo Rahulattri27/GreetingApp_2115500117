@@ -13,7 +13,9 @@
 /Users/rahulkumarair/Desktop/GreetingsApp/HelloGreetingApplication/RepositoryLayer/obj/Debug/net6.0/refint/RepositoryLayer.dll
 /Users/rahulkumarair/Desktop/GreetingsApp/HelloGreetingApplication/RepositoryLayer/obj/Debug/net6.0/RepositoryLayer.pdb
 /Users/rahulkumarair/Desktop/GreetingsApp/HelloGreetingApplication/RepositoryLayer/obj/Debug/net6.0/ref/RepositoryLayer.dll
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/bin/Debug/net6.0/appsettings.json
 /Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/bin/Debug/net6.0/RepositoryLayer.deps.json
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/bin/Debug/net6.0/RepositoryLayer.runtimeconfig.json
 /Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/bin/Debug/net6.0/RepositoryLayer.dll
 /Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/bin/Debug/net6.0/RepositoryLayer.pdb
 /Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/bin/Debug/net6.0/ModelLayer.dll
@@ -27,4 +29,5 @@
 /Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/obj/Debug/net6.0/RepositoryLayer.dll
 /Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/obj/Debug/net6.0/refint/RepositoryLayer.dll
 /Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/obj/Debug/net6.0/RepositoryLayer.pdb
+/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/obj/Debug/net6.0/RepositoryLayer.genruntimeconfig.cache
 /Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/obj/Debug/net6.0/ref/RepositoryLayer.dll

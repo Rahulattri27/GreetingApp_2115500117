@@ -4,6 +4,10 @@ using System;
 using Microsoft.Extensions.Hosting;
 using BusinessLayer.Interface;
 using BusinessLayer.Services;
+using RepositoryLayer.Interface;
+using RepositoryLayer.Services;
+using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Context;
 
 //Setup the Nlog from nlog.config and start the Nlog
 var logger = NLog.LogManager.Setup().LoadConfigurationFromFile("nlog.config").GetCurrentClassLogger();
@@ -12,6 +16,10 @@ try
     logger.Info("Starting the application");
     //make the builder
     var builder = WebApplication.CreateBuilder(args);
+    //Add Database context
+    builder.Services.AddDbContext<HelloGreetingContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Sqlserver")));
+
 
     //this ensures that default logging providers are not used
     builder.Logging.ClearProviders();
@@ -21,7 +29,7 @@ try
 
     // Add services to the container.
     builder.Services.AddScoped<IGreetingBL, GreetingBL>();
-
+    builder.Services.AddScoped<IGreetingRL, GreetingRL>();
     builder.Services.AddControllers();
 
     // Add Swagger services
