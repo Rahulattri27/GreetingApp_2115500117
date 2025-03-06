@@ -6,6 +6,7 @@ namespace RepositoryLayer.Interface
 	{
 		string Add(GreetingModel greeting);
 		List<GreetingModel> GetDataBase();
+		GreetingModel FindGreeting(int id);
 
     }
 }

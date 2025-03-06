@@ -30,10 +30,17 @@ namespace RepositoryLayer.Services
 			}
 		}
 		public List<GreetingModel> GetDataBase()
-		{
+		{	
 			return _context.Greetings.ToList<GreetingModel>();
 		}
-
+		//method to find the greeting on id.
+		public GreetingModel FindGreeting(int id)
+		{
+			_logger.LogInformation($"Finding the {id}");
+			var greeting = _context.Greetings.Find(id);
+			_logger.LogInformation("Returning the greeting from database");
+			return greeting;
+		}
 		
 	}
 }
