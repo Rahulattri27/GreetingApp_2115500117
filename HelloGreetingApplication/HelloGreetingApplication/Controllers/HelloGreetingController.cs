@@ -188,6 +188,10 @@ public class HelloGreetingController : ControllerBase
         return Ok(response);
 
     }
+    /// <summary>
+    /// Method Getting all the greeting from database 
+    /// </summary>
+    /// <returns>return all the greeting  from database</returns>
     [HttpGet("Greetings")]
     public IActionResult GetGreetings()
     {

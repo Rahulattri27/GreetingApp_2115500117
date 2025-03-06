@@ -15,6 +15,7 @@ namespace RepositoryLayer.Services
 			_logger = logger;
 
 		}
+		//method to add the greeting in database
 		public string Add(GreetingModel greeting)
 		{
 			_context.Greetings.Add(greeting);
@@ -29,6 +30,7 @@ namespace RepositoryLayer.Services
 				return ex.Message;
 			}
 		}
+		//method to get all the greetings
 		public List<GreetingModel> GetDataBase()
 		{	
 			return _context.Greetings.ToList<GreetingModel>();
