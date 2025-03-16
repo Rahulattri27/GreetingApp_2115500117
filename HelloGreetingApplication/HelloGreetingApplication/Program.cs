@@ -8,6 +8,9 @@ using RepositoryLayer.Interface;
 using RepositoryLayer.Services;
 using Microsoft.EntityFrameworkCore;
 using RepositoryLayer.Context;
+using Middlewares.GlobalExceptionHandler;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 //Setup the Nlog from nlog.config and start the Nlog
 var logger = NLog.LogManager.Setup().LoadConfigurationFromFile("nlog.config").GetCurrentClassLogger();
@@ -34,9 +37,28 @@ try
 
     // Add Swagger services
     builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
+    builder.Services.AddSwaggerGen(options =>
+    {
+        options.SwaggerDoc("v1", new OpenApiInfo
+        {
+            Title = "Greetings API",
+            Version = "v1",
+            Description = "An API to manage Greetings"
+        });
+
+        // Enable XML comments if the XML file exists
+        var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+        var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
+        if (File.Exists(xmlPath))
+        {
+            options.IncludeXmlComments(xmlPath);
+        }
+    });
+
 
     var app = builder.Build();
+
+    app.UseMiddleware<GlobalExceptionMiddleware>();
 
     // Configure the HTTP request pipeline.
 

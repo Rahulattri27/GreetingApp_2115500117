@@ -2,6 +2,7 @@
 using ModelLayer.Model;
 using Microsoft.Extensions.Logging;
 using BusinessLayer.Interface;
+using Azure;
 
 namespace HelloGreetingApplication.Controllers;
 ///<summary>
@@ -11,17 +12,22 @@ namespace HelloGreetingApplication.Controllers;
 [Route("[controller]")]
 public class HelloGreetingController : ControllerBase
 {
-    //create the instance 
+    
     private readonly ILogger<HelloGreetingController> _logger;
     private readonly IGreetingBL _greetingBL;
+    /// <summary>
+    /// create instances of objects
+    /// </summary>
     public HelloGreetingController(ILogger<HelloGreetingController> logger, IGreetingBL greetingBL)
     {
         _logger = logger;
         _greetingBL = greetingBL;
     }
+
+
     ///<summary>
     /// Get method to get the Greeting Message
-    ///<summary>
+    ///</summary>
     ///<returns>"Hello, World!"</returns>
     [HttpGet]
     public IActionResult GetMethod()
@@ -176,16 +182,37 @@ public class HelloGreetingController : ControllerBase
     [HttpPost("AddNew")]
     public IActionResult CreateGreeting(GreetingModel greeting)
     {
-        _logger.LogInformation("Creating the greeting in database");
-        string message = _greetingBL.Create(greeting);
-        var response = new ResponseModel<string>
+        try
         {
-            Success = true,
-            Message = "Greeting added to database",
-            Data = message
-        };
-        _logger.LogInformation("Returning response: {message}", message);
-        return Ok(response);
+            _logger.LogInformation("Creating the greeting in database");
+            string message = _greetingBL.Create(greeting);
+            var response = new ResponseModel<string>();
+            if(message== "Successfully added Greeting"){
+                response.Success = true;
+                response.Message = "Greeting added to database";
+                response.Data = message;
+
+                _logger.LogInformation("Returning response: {message}", message);
+                return Ok(response);
+            }
+            response.Success = false;
+            response.Message = "Not Found in Database";
+            _logger.LogInformation("Returning response: {message}", message);
+            return NotFound(response);
+        }
+            
+        catch(Exception ex)
+        {
+            _logger.LogError("Exception catched in Controller CreateGreeting().");
+            var response = new ResponseModel<String>
+            {
+                Success = false,
+                Message = $"Exception Occured. {ex.Message}"
+            };
+            return StatusCode(500, response);
+
+            
+        }
 
     }
     /// <summary>
@@ -195,17 +222,24 @@ public class HelloGreetingController : ControllerBase
     [HttpGet("Greetings")]
     public IActionResult GetGreetings()
     {
-        _logger.LogInformation("Get the Greeting from database");
-        var result = _greetingBL.GetDatabaseGreeting();
-        var response = new ResponseModel<List<GreetingModel>>
+        var response = new ResponseModel<List<GreetingModel>>();
+        try
         {
-            Success = true,
-            Message = "Get the Greetings from Database",
-            Data = result
-        };
-        _logger.LogInformation("Returning Database Greetings");
-        return Ok(response);
+            _logger.LogInformation("Get the Greeting from database");
+            var result = _greetingBL.GetDatabaseGreeting();
 
+
+            response.Success = true;
+            response.Message = "Get the Greetings from Database";
+            response.Data = result;
+            _logger.LogInformation("Returning Database Greetings");
+            return Ok(response);
+        }
+        catch(Exception ex){
+            response.Success = false;
+            response.Message = $"Exception occured in GetGreetings() Business Layer: {ex.Message}";
+            return StatusCode(500, response);
+        }
     }
 
 
@@ -217,21 +251,32 @@ public class HelloGreetingController : ControllerBase
     [HttpGet("find/{id}")]
     public IActionResult FindGreeting(int id)
     {
-        _logger.LogInformation("find the greeting from database");
-        var result = _greetingBL.FindGreeting(id);
-
         var response = new ResponseModel<GreetingModel>();
-        if (result == null)
+        try
+        {
+            _logger.LogInformation("find the greeting from database");
+            var result = _greetingBL.FindGreeting(id);
+
+
+            if (result == null)
+            {
+                response.Success = false;
+                response.Message = $"{id} not found";
+                response.Data = null;
+                return NotFound(response);
+            }
+            response.Success = true;
+            response.Message = $"{id} found";
+            response.Data = result;
+            return Ok(response);
+        }
+        catch(Exception ex)
         {
             response.Success = false;
-            response.Message = $"{id} not found";
-            response.Data = null;
-            return NotFound(response);
+            response.Message = $"Exception : {ex.Message}";
+            return StatusCode(500, response);
+
         }
-        response.Success = true;
-        response.Message = $"{id} found";
-        response.Data = result;
-        return Ok(response);
 
 
     }
@@ -244,20 +289,32 @@ public class HelloGreetingController : ControllerBase
     [HttpPatch("update/{id}")]
     public IActionResult UpdateGreetingById(int id,string message)
     {
-        _logger.LogInformation("Executing the UpdateMessagebyId");
-        var result = _greetingBL.UpdateGreeting(id,message);
         var response = new ResponseModel<string>();
-        if (result)
+        try
         {
-            response.Success = true;
-            response.Message = "updated successfully";
-            response.Data = message;
+            _logger.LogInformation("Executing the UpdateMessagebyId");
+            var result = _greetingBL.UpdateGreeting(id, message);
+
+            if (result)
+            {
+                response.Success = true;
+                response.Message = "updated successfully";
+                response.Data = message;
+                return Ok(response);
+            }
+            response.Success = false;
+            response.Message = "updated unsuccessfull";
+            response.Data = null;
             return Ok(response);
         }
-        response.Success = false;
-        response.Message = "updated unsuccessfull";
-        response.Data = null;
-        return Ok(response);
+        catch (Exception ex)
+        {
+            response.Success = false;
+            response.Message = $"Exception : {ex.Message}";
+            return StatusCode(500, response);
+
+        }
+
 
     }
     /// <summary>
@@ -268,22 +325,34 @@ public class HelloGreetingController : ControllerBase
     [HttpDelete("delete/{id}")]
     public IActionResult DeleteGreeting(int id)
     {
-        _logger.LogInformation("Executing DeleteGreeting in Controller");
-        bool result = _greetingBL.DeleteGreeting(id);
         var response = new ResponseModel<string>();
-
-        if (result)
+        try
         {
-            response.Success = true;
-            response.Message = $"{id} successfully deleted";
+            _logger.LogInformation("Executing DeleteGreeting in Controller");
+            bool result = _greetingBL.DeleteGreeting(id);
+           
+
+            if (result)
+            {
+                response.Success = true;
+                response.Message = $"{id} successfully deleted";
+                response.Data = null;
+                return Ok(response);
+            }
+            response.Success = false;
+            response.Message = $"{id} does not exist";
             response.Data = null;
             return Ok(response);
         }
-        response.Success = false;
-        response.Message = $"{id} does not exist";
-        response.Data = null;
-        return Ok(response);
+        catch (Exception ex)
+        {
+            response.Success = false;
+            response.Message = $"Exception : {ex.Message}";
+            return StatusCode(500, response);
+
+        }
 
 
     }
+
 }

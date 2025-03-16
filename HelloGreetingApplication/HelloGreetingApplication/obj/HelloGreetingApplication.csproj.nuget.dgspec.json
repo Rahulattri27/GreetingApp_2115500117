@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/HelloGreetingApplication/HelloGreetingApplication.csproj": {}
+    "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/HelloGreetingApplication.csproj": {}
   },
   "projects": {
-    "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj": {
+    "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj",
+        "projectUniqueName": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj",
+        "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj",
         "packagesPath": "/Users/rahulkumarair/.nuget/packages/",
-        "outputPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/BusinessLayer/obj/",
+        "outputPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rahulkumarair/.nuget/NuGet/NuGet.Config"
@@ -26,11 +26,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/ModelLayer.csproj": {
-                "projectPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/ModelLayer.csproj"
+              "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj": {
+                "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj"
               },
-              "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj": {
-                "projectPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj"
+              "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj": {
+                "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/HelloGreetingApplication/HelloGreetingApplication.csproj": {
+    "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/HelloGreetingApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/HelloGreetingApplication/HelloGreetingApplication.csproj",
+        "projectUniqueName": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/HelloGreetingApplication.csproj",
         "projectName": "HelloGreetingApplication",
-        "projectPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/HelloGreetingApplication/HelloGreetingApplication.csproj",
+        "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/HelloGreetingApplication.csproj",
         "packagesPath": "/Users/rahulkumarair/.nuget/packages/",
-        "outputPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/HelloGreetingApplication/obj/",
+        "outputPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rahulkumarair/.nuget/NuGet/NuGet.Config"
@@ -103,8 +103,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj": {
-                "projectPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj"
+              "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj": {
+                "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj"
+              },
+              "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/Middlewares/Middlewares.csproj": {
+                "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/Middlewares/Middlewares.csproj"
               }
             }
           }
@@ -179,14 +182,81 @@
         }
       }
     },
-    "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/ModelLayer.csproj": {
+    "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/Middlewares/Middlewares.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/ModelLayer.csproj",
-        "projectName": "ModelLayer",
-        "projectPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/ModelLayer.csproj",
+        "projectUniqueName": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/Middlewares/Middlewares.csproj",
+        "projectName": "Middlewares",
+        "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/Middlewares/Middlewares.csproj",
         "packagesPath": "/Users/rahulkumarair/.nuget/packages/",
-        "outputPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/obj/",
+        "outputPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/Middlewares/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/rahulkumarair/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj": {
+                "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.317/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj",
+        "projectName": "ModelLayer",
+        "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj",
+        "packagesPath": "/Users/rahulkumarair/.nuget/packages/",
+        "outputPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rahulkumarair/.nuget/NuGet/NuGet.Config"
@@ -242,14 +312,14 @@
         }
       }
     },
-    "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj": {
+    "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj",
+        "projectUniqueName": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj",
         "projectName": "RepositoryLayer",
-        "projectPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj",
+        "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj",
         "packagesPath": "/Users/rahulkumarair/.nuget/packages/",
-        "outputPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/obj/",
+        "outputPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/RepositoryLayer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rahulkumarair/.nuget/NuGet/NuGet.Config"
@@ -264,8 +334,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/ModelLayer.csproj": {
-                "projectPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/ModelLayer.csproj"
+              "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj": {
+                "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj"
               }
             }
           }

@@ -10,6 +10,7 @@
         "dependencies": {
           "BusinessLayer": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.36",
+          "Middlewares": "1.0.0",
           "NLog": "5.4.0",
           "NLog.Extensions.Logging": "5.4.0",
           "NLog.Web.AspNetCore": "5.4.0",
@@ -716,6 +717,14 @@
           "BusinessLayer.dll": {}
         }
       },
+      "Middlewares/1.0.0": {
+        "dependencies": {
+          "BusinessLayer": "1.0.0"
+        },
+        "runtime": {
+          "Middlewares.dll": {}
+        }
+      },
       "ModelLayer/1.0.0": {
         "runtime": {
           "ModelLayer.dll": {}
@@ -1220,6 +1229,11 @@
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
     "BusinessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Middlewares/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HelloGreetingApplication</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "T:HelloGreetingApplication.Controllers.HelloGreetingController" -->
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.#ctor(Microsoft.Extensions.Logging.ILogger{HelloGreetingApplication.Controllers.HelloGreetingController},BusinessLayer.Interface.IGreetingBL)">
+            <summary>
+            create instances of objects
+            </summary>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.GetMethod">
+            <summary>
+             Get method to get the Greeting Message
+            </summary>
+            <returns>"Hello, World!"</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.Post(ModelLayer.Model.RequestBody)">
+            <summary>
+            Adds new Data
+            </summary>
+            <param name="requestBody">the request body containing data</param>
+            <returns>Success message with data created</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.Put(System.Int32,ModelLayer.Model.RequestBody)">
+            <summary>
+            Updates the data at a particular Id
+            </summary>
+            <param name="id">The id of the data to update</param>
+            <param name="updatedData">The updated data</param>
+            <returns>Success or failure response</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.Patch(System.Int32,System.String)">
+            <summary>
+            Partially update the data for a particular id
+            </summary>
+            <param name="id"> the id of the data to update</param>
+            <param name="patchedData">the particular data to be updated</param>
+            <returns>Success or failure response</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.Delete(System.Int32)">
+            <summary>
+            Deletes the data for a given ID.
+            </summary>
+            <param name="id">The ID of the data to delete.</param>
+            <returns>Success or failure response.</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.GetSimpleGreeting">
+            <summary>
+            Get the Hello World as Greting
+            </summary>
+            <returns>Hello World</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.GetGreeting(System.String,System.String)">
+            <summary>
+            Method to greeting with name or default Hello World
+            </summary>
+            <param name="FirstName">first name of user</param>
+            <param name="LastName">Last name of user</param>
+            <returns>Greeting message with name</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.CreateGreeting(ModelLayer.Model.GreetingModel)">
+            <summary>
+            Method to create the greeting in database
+            </summary>
+            <param name="greeting">Greeting message from user</param>
+            <returns>Created Successfully Message</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.GetGreetings">
+            <summary>
+            Method Getting all the greeting from database 
+            </summary>
+            <returns>return all the greeting  from database</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.FindGreeting(System.Int32)">
+            <summary>
+            Method to find the greeting from database using id
+            </summary>
+            <param name="id"></param>
+            <returns>return the greeting if id found</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingById(System.Int32,System.String)">
+            <summary>
+            method to update the greeting by id
+            </summary>
+            <param name="id">id of greeting from user</param>
+            <param name="message">Updated greeting</param>
+            <returns>Success or Failure response</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.DeleteGreeting(System.Int32)">
+            <summary>
+            Method to delete the greeting on id
+            </summary>
+            <param name="id">id of greeting to delete</param>
+            <returns>Success or failure response</returns>
+        </member>
+    </members>
+</doc>

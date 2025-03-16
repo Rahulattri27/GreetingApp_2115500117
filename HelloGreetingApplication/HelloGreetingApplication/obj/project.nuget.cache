@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3GuBYNa5snJRQkh/zE12Uyp31C2P9Ukj59TQUm7FbF8gjQEKsJ5tEgu8cNs6PVbwhuXrFvQJgvUiygDum+ReSA==",
+  "dgSpecHash": "xg1MgADMTfeSbYN+G8kgDlMXPZXd/3B2Qvr2QS0L1IdRxg4WfnPBKz3vZ8cwQXdrj3aeqyyO0oKUgdBlTniSeA==",
   "success": true,
-  "projectFilePath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/HelloGreetingApplication/HelloGreetingApplication.csproj",
+  "projectFilePath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/HelloGreetingApplication.csproj",
   "expectedPackageFiles": [
     "/Users/rahulkumarair/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",

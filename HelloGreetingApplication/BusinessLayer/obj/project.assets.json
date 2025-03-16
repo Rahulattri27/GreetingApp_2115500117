@@ -2779,11 +2779,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj",
+      "projectUniqueName": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj",
+      "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/BusinessLayer.csproj",
       "packagesPath": "/Users/rahulkumarair/.nuget/packages/",
-      "outputPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/BusinessLayer/obj/",
+      "outputPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rahulkumarair/.nuget/NuGet/NuGet.Config"
@@ -2798,11 +2798,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/ModelLayer.csproj": {
-              "projectPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/ModelLayer.csproj"
+            "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj": {
+              "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj"
             },
-            "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj": {
-              "projectPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj"
+            "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj": {
+              "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/RepositoryLayer/RepositoryLayer.csproj"
             }
           }
         }

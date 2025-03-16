@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/ModelLayer.csproj",
+      "projectUniqueName": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj",
       "projectName": "ModelLayer",
-      "projectPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/ModelLayer.csproj",
+      "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj",
       "packagesPath": "/Users/rahulkumarair/.nuget/packages/",
-      "outputPath": "/Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/obj/",
+      "outputPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rahulkumarair/.nuget/NuGet/NuGet.Config"

@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ModelLayer
-build_property.ProjectDir = /Users/rahulkumarair/Desktop/capgemini/GLAProject/HelloGreetingApplication/ModelLayer/
+build_property.ProjectDir = /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/
