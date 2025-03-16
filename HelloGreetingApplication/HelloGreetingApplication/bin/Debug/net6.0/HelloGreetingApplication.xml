@@ -115,5 +115,19 @@
             <param name="login">User credentials for login</param>
             <returns>Success or Failure Message</returns>
         </member>
+        <member name="M:HelloGreetingApplication.Controllers.UserController.ForgetPassword(System.String)">
+            <summary>
+            Sends a password reset token to users email
+            </summary>
+            <param name="email">the email address of the user</param>
+            <returns>Returns success message if email exists</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.UserController.ResetPassword(ModelLayer.DTO.ResetPasswordDTO)">
+            <summary>
+            Resets the password for user
+            </summary>
+            <param name="resetPassword">the reset token and new password</param>
+            <returns>success message if password reset successfully</returns>
+        </member>
     </members>
 </doc>

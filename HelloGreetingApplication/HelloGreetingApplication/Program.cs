@@ -40,6 +40,7 @@ try
     builder.Services.AddScoped<IUserBL, UserBL>();
     builder.Services.AddScoped<IUserRL, UserRL>();
     builder.Services.AddScoped<Password_Hash>();
+    builder.Services.AddScoped<IEmailService, EmailService>();
     builder.Services.AddControllers();
 
     // Add Swagger services

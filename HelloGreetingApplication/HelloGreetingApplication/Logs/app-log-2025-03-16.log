@@ -315,3 +315,102 @@ WHERE [u].[Email] = @__loginDTO_Email_0
 2025-03-16 22:20:12.3477 | INFO | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.GetMethod (HelloGreetingApplication) in 2.5373ms 
 2025-03-16 22:20:12.3477 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetMethod (HelloGreetingApplication)' 
 2025-03-16 22:20:12.3479 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/HelloGreeting - - - 200 - application/json;+charset=utf-8 56.5195ms 
+2025-03-16 23:21:38.1071 | INFO | Starting the application 
+2025-03-16 23:21:38.3800 | ERROR | Application stopped due to an exception System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: BusinessLayer.Interface.IUserBL Lifetime: Scoped ImplementationType: BusinessLayer.Services.UserBL': Unable to resolve service for type 'RepositoryLayer.Services.EmailService' while attempting to activate 'RepositoryLayer.Services.UserRL'.) (Error while validating the service descriptor 'ServiceType: RepositoryLayer.Interface.IUserRL Lifetime: Scoped ImplementationType: RepositoryLayer.Services.UserRL': Unable to resolve service for type 'RepositoryLayer.Services.EmailService' while attempting to activate 'RepositoryLayer.Services.UserRL'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: BusinessLayer.Interface.IUserBL Lifetime: Scoped ImplementationType: BusinessLayer.Services.UserBL': Unable to resolve service for type 'RepositoryLayer.Services.EmailService' while attempting to activate 'RepositoryLayer.Services.UserRL'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'RepositoryLayer.Services.EmailService' while attempting to activate 'RepositoryLayer.Services.UserRL'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: RepositoryLayer.Interface.IUserRL Lifetime: Scoped ImplementationType: RepositoryLayer.Services.UserRL': Unable to resolve service for type 'RepositoryLayer.Services.EmailService' while attempting to activate 'RepositoryLayer.Services.UserRL'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'RepositoryLayer.Services.EmailService' while attempting to activate 'RepositoryLayer.Services.UserRL'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2025-03-16 23:24:00.0672 | INFO | Starting the application 
+2025-03-16 23:24:00.4920 | INFO | User profile is available. Using '/Users/rahulkumarair/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-16 23:24:00.7397 | INFO | Now listening on: https://localhost:7130 
+2025-03-16 23:24:00.7624 | INFO | Now listening on: http://localhost:5163 
+2025-03-16 23:24:00.7640 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-03-16 23:24:00.7640 | INFO | Hosting environment: Development 
+2025-03-16 23:24:00.7640 | INFO | Content root path: /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication 
+2025-03-16 23:24:02.0036 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.html - - 
+2025-03-16 23:24:02.1215 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 117.6644ms 
+2025-03-16 23:24:02.1343 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.js - - 
+2025-03-16 23:24:02.1371 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.0829ms 
+2025-03-16 23:24:02.1747 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - 
+2025-03-16 23:24:02.2464 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 71.8092ms 
+2025-03-16 23:24:27.1289 | INFO | Request starting HTTP/1.1 POST https://localhost:7130/auth/forget-password application/json 13 
+2025-03-16 23:24:27.1382 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.ForgetPassword (HelloGreetingApplication)' 
+2025-03-16 23:24:27.1543 | INFO | Route matched with {action = "ForgetPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ForgetPassword(System.String) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-16 23:24:27.2628 | INFO | Forget Password Controller 
+2025-03-16 23:24:27.2630 | INFO | Forget PAssword in Business Layer 
+2025-03-16 23:24:27.4922 | INFO | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-16 23:24:27.8651 | INFO | Executed DbCommand (44ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 
+2025-03-16 23:24:28.0093 | INFO | Executed DbCommand (12ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [ResetToken] = @p0, [ResetTokenExpiry] = @p1
+WHERE [UserId] = @p2;
+SELECT @@ROWCOUNT; 
+2025-03-16 23:24:33.7563 | INFO | Forget password Executed Successfully 
+2025-03-16 23:24:33.7680 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-16 23:24:33.7870 | INFO | Executed action HelloGreetingApplication.Controllers.UserController.ForgetPassword (HelloGreetingApplication) in 6626.5393ms 
+2025-03-16 23:24:33.7870 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.ForgetPassword (HelloGreetingApplication)' 
+2025-03-16 23:24:33.7906 | INFO | Request finished HTTP/1.1 POST https://localhost:7130/auth/forget-password application/json 13 - 200 - application/json;+charset=utf-8 6661.7210ms 
+2025-03-16 23:25:22.0490 | INFO | Request starting HTTP/1.1 POST https://localhost:7130/auth/reset-password application/json 325 
+2025-03-16 23:25:22.0538 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.ResetPassword (HelloGreetingApplication)' 
+2025-03-16 23:25:22.0568 | INFO | Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(ModelLayer.DTO.ResetPasswordDTO) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-16 23:25:22.0688 | INFO | Executing ResetPassword 
+2025-03-16 23:25:22.0699 | INFO | ResetPassword in BusinessLayer 
+2025-03-16 23:25:22.0804 | INFO | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-16 23:25:22.1393 | INFO | Executed DbCommand (43ms) [Parameters=[@__token_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry]
+FROM [Users] AS [u]
+WHERE ([u].[ResetToken] = @__token_0) AND ([u].[ResetTokenExpiry] > GETUTCDATE()) 
+2025-03-16 23:25:22.1600 | INFO | Executed DbCommand (3ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [PasswordHash] = @p0, [ResetToken] = @p1, [ResetTokenExpiry] = @p2
+WHERE [UserId] = @p3;
+SELECT @@ROWCOUNT; 
+2025-03-16 23:25:22.1622 | INFO | Password reset successful 
+2025-03-16 23:25:22.1622 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-16 23:25:22.1629 | INFO | Executed action HelloGreetingApplication.Controllers.UserController.ResetPassword (HelloGreetingApplication) in 105.4336ms 
+2025-03-16 23:25:22.1629 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.ResetPassword (HelloGreetingApplication)' 
+2025-03-16 23:25:22.1629 | INFO | Request finished HTTP/1.1 POST https://localhost:7130/auth/reset-password application/json 325 - 200 - application/json;+charset=utf-8 114.0243ms 
+2025-03-16 23:25:46.7495 | INFO | Request starting HTTP/1.1 POST https://localhost:7130/auth/login application/json 49 
+2025-03-16 23:25:46.7556 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-16 23:25:46.7608 | INFO | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.DTO.LoginDTO) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-16 23:25:46.7656 | INFO | User Login Started 
+2025-03-16 23:25:46.7656 | INFO | Login in Business Layer 
+2025-03-16 23:25:46.7656 | INFO | checking if user exist or not 
+2025-03-16 23:25:46.8038 | INFO | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-16 23:25:46.8181 | INFO | Executed DbCommand (11ms) [Parameters=[@__loginDTO_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDTO_Email_0 
+2025-03-16 23:25:46.8310 | INFO | User details Found in Database 
+2025-03-16 23:25:46.8310 | INFO | User Login Successfull 
+2025-03-16 23:25:46.8317 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[ModelLayer.DTO.UserResponseDTO, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-16 23:25:46.8339 | INFO | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 72.9468ms 
+2025-03-16 23:25:46.8339 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-16 23:25:46.8339 | INFO | Request finished HTTP/1.1 POST https://localhost:7130/auth/login application/json 49 - 200 - application/json;+charset=utf-8 84.5542ms 

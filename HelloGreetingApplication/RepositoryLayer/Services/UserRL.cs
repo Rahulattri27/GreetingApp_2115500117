@@ -19,13 +19,15 @@ namespace RepositoryLayer.Services
         private readonly Password_Hash _passwordHash;
         private readonly ILogger<UserRL> _logger;
         private readonly IConfiguration _configuration;
+        private readonly IEmailService _emailService;
         //Constructor to Initialize the objects
-        public UserRL(HelloGreetingContext context, Password_Hash hash,ILogger<UserRL> logger,IConfiguration configuration)
+        public UserRL(HelloGreetingContext context, Password_Hash hash,ILogger<UserRL> logger,IConfiguration configuration,IEmailService emailService)
         {
             _context = context;
             _logger = logger;
             _passwordHash = hash;
             _configuration = configuration;
+            _emailService = emailService;
         }
 
 
@@ -106,7 +108,68 @@ namespace RepositoryLayer.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
+        /// <summary>
+		/// method to get the token on mail to reset the password
+		/// </summary>
+		/// <param name="email">email address of the user</param>
+		/// <returns>token on email</returns>
+		public bool ForgetPassword(string email)
+        {
+            try
+            {
+                _logger.LogInformation("Finding Email in database");
+                var user = _context.Users.FirstOrDefault(u => u.Email == email);
+                if (user == null)
+                {
+                    _logger.LogInformation("Email not found");
+                    return false;
+                }
+                _logger.LogInformation("Generate and save reset token");
+                user.ResetToken = GenerateJwtToken(user);
+                user.ResetTokenExpiry = DateTime.UtcNow.AddMinutes(15);
+                _context.SaveChanges();
+                string emailBody = $"Reset Token :\n {user.ResetToken}";
+                _emailService.SendEmail(user.Email, "Reset Password", emailBody);
+                _logger.LogInformation("Email sent");
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
 
+        }
+
+
+        /// <summary>
+        /// method to change the password
+        /// </summary>
+        /// <param name="token">system generated token recieved on mail</param>
+        /// <param name="newPassword"> new password </param>
+        /// <returns>Success or failure response</returns>
+        public bool ResetPassword(string token, string newPassword)
+        {
+            try
+            {
+                _logger.LogInformation("Finding Email in database");
+                var user = _context.Users.FirstOrDefault(e => e.ResetToken == token && e.ResetTokenExpiry > DateTime.UtcNow);
+                if (user == null)
+                {
+                    _logger.LogInformation("Invalid token");
+                    //Invalid token
+                    return false;
+                }
+                user.PasswordHash = _passwordHash.PasswordHashing(newPassword);
+                user.ResetToken = null;
+                user.ResetTokenExpiry = null;
+                _context.SaveChanges();
+                _logger.LogInformation("Password Reset Successfull");
+                return true;
+            }
+            catch(Exception ) {
+                return false;
+            }
+        }
 
 
     }

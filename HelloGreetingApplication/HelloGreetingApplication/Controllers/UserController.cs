@@ -78,5 +78,55 @@ namespace HelloGreetingApplication.Controllers
             return Ok(response2);
         }
 
+
+        /// <summary>
+		/// Sends a password reset token to users email
+		/// </summary>
+		/// <param name="email">the email address of the user</param>
+		/// <returns>Returns success message if email exists</returns>
+		[HttpPost("forget-password")]
+        public IActionResult ForgetPassword([FromBody] string email)
+        {
+            _logger.LogInformation("Forget Password Controller");
+            var response = new ResponseModel<string>();
+            bool success = _userBL.ForgetPassword(email);
+            if (success)
+            {
+                _logger.LogInformation("Forget password Executed Successfully");
+                response.Success = true;
+                response.Message = "Reset Link Sent to your Email";
+                return Ok(response);
+            }
+            _logger.LogInformation("Forget Password does not  found email");
+            response.Message = "Email not found.";
+            return NotFound(response);
+        }
+
+        /// <summary>
+        /// Resets the password for user
+        /// </summary>
+        /// <param name="resetPassword">the reset token and new password</param>
+        /// <returns>success message if password reset successfully</returns>
+        [HttpPost("reset-password")]
+        public IActionResult ResetPassword([FromBody] ResetPasswordDTO resetPassword)
+        {
+            _logger.LogInformation("Executing ResetPassword");
+            var response = new ResponseModel<string>();
+            bool success = _userBL.ResetPassword(resetPassword.ResetToken, resetPassword.NewPassword);
+            if (success)
+            {
+
+                response.Success = true;
+                response.Message = "Password reset Successfully";
+                _logger.LogInformation("Password reset successful");
+                return Ok(response);
+            }
+            response.Message = "Invalid or Expired token";
+            _logger.LogInformation("PAssword reset fail");
+            return NotFound(response);
+        }
+
+
+
     }
 }
