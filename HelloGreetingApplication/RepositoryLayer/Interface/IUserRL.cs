@@ -7,7 +7,7 @@ namespace RepositoryLayer.Interface
 	public interface IUserRL
 	{
         User RegisterUser(RegisterDTO registerDTO);
-        User LoginUser(LoginDTO loginDTO);
+        UserResponseDTO LoginUser(LoginDTO loginDTO);
     }
 }
 

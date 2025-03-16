@@ -71,7 +71,7 @@ namespace HelloGreetingApplication.Controllers
                 return Unauthorized(response);
             }
             _logger.LogInformation("User Login Successfull");
-            var response2 = new ResponseModel<User>();
+            var response2 = new ResponseModel<UserResponseDTO>();
             response2.Success = true;
             response2.Message = "User Login Successfully";
             response2.Data = user;

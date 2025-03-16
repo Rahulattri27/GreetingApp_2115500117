@@ -39,10 +39,10 @@ namespace BusinessLayer.Services
             /// </summary>
             /// <param name="loginDTO">login credentials</param>
             /// <returns>Success or failure response</returns>
-            public User LoginUser(LoginDTO loginDTO)
+            public UserResponseDTO LoginUser(LoginDTO loginDTO)
             {
             _logger.LogInformation("Login in Business Layer");
-                return _userRL.LoginUser(loginDTO);
+            return _userRL.LoginUser(loginDTO);
             }
         }
     

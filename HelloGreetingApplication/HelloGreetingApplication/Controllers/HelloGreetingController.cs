@@ -2,12 +2,13 @@
 using ModelLayer.Model;
 using Microsoft.Extensions.Logging;
 using BusinessLayer.Interface;
-using Azure;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HelloGreetingApplication.Controllers;
 ///<summary>
 /// class providing Api for HelloGreeting
 ///<summary>
+
 [ApiController]
 [Route("[controller]")]
 public class HelloGreetingController : ControllerBase
@@ -30,6 +31,7 @@ public class HelloGreetingController : ControllerBase
     ///</summary>
     ///<returns>"Hello, World!"</returns>
     [HttpGet]
+    [Authorize]
     public IActionResult GetMethod()
     {
         _logger.LogInformation("Executing Get Method");
@@ -180,6 +182,7 @@ public class HelloGreetingController : ControllerBase
     /// <param name="greeting">Greeting message from user</param>
     /// <returns>Created Successfully Message</returns>
     [HttpPost("AddNew")]
+    [Authorize]
     public IActionResult CreateGreeting(GreetingModel greeting)
     {
         try
@@ -220,6 +223,7 @@ public class HelloGreetingController : ControllerBase
     /// </summary>
     /// <returns>return all the greeting  from database</returns>
     [HttpGet("Greetings")]
+    [Authorize]
     public IActionResult GetGreetings()
     {
         var response = new ResponseModel<List<GreetingModel>>();
@@ -249,6 +253,7 @@ public class HelloGreetingController : ControllerBase
     /// <param name="id"></param>
     /// <returns>return the greeting if id found</returns>
     [HttpGet("find/{id}")]
+    [Authorize]
     public IActionResult FindGreeting(int id)
     {
         var response = new ResponseModel<GreetingModel>();
@@ -287,6 +292,7 @@ public class HelloGreetingController : ControllerBase
     /// <param name="message">Updated greeting</param>
     /// <returns>Success or Failure response</returns>
     [HttpPatch("update/{id}")]
+    [Authorize]
     public IActionResult UpdateGreetingById(int id,string message)
     {
         var response = new ResponseModel<string>();
@@ -323,6 +329,7 @@ public class HelloGreetingController : ControllerBase
     /// <param name="id">id of greeting to delete</param>
     /// <returns>Success or failure response</returns>
     [HttpDelete("delete/{id}")]
+    [Authorize]
     public IActionResult DeleteGreeting(int id)
     {
         var response = new ResponseModel<string>();

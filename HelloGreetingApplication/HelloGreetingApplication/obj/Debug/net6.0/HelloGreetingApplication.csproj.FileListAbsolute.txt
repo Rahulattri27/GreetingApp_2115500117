@@ -236,3 +236,4 @@
 /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/obj/Debug/net6.0/HelloGreetingApplication.pdb
 /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/obj/Debug/net6.0/HelloGreetingApplication.genruntimeconfig.cache
 /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/obj/Debug/net6.0/ref/HelloGreetingApplication.dll
+/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

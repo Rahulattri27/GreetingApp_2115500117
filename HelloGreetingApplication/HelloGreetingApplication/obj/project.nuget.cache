@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "X3jyoi52mQTnPcuYrGtk9zToY3rErx9vlfzuiBiuMvSsc47ZVlLbgLHwFAK25POK59l+ni0sYVqWi3Od7QUmAg==",
+  "dgSpecHash": "N+LdOd80RJ/HKOkEuwznbI9EYsBkoYN8iJMx+FRYzQ2aERsTYB4u1NirI4YZzdx5Nr6tYBGKfifVfw1fxN9u4A==",
   "success": true,
   "projectFilePath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/HelloGreetingApplication.csproj",
   "expectedPackageFiles": [
     "/Users/rahulkumarair/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/rahulkumarair/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.36/microsoft.aspnetcore.authentication.jwtbearer.6.0.36.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/microsoft.data.sqlclient/5.1.3/microsoft.data.sqlclient.5.1.3.nupkg.sha512",

@@ -70,3 +70,248 @@ WHERE [u].[Email] = @__loginDTO_Email_0
 2025-03-16 21:53:43.3632 | INFO | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 742.5262ms 
 2025-03-16 21:53:43.3632 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
 2025-03-16 21:53:43.3654 | INFO | Request finished HTTP/1.1 POST https://localhost:7130/auth/login application/json 46 - 200 - application/json;+charset=utf-8 775.3957ms 
+2025-03-16 22:09:11.6236 | INFO | Starting the application 
+2025-03-16 22:09:12.0339 | INFO | User profile is available. Using '/Users/rahulkumarair/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-16 22:09:12.2787 | INFO | Now listening on: https://localhost:7130 
+2025-03-16 22:09:12.2788 | INFO | Now listening on: http://localhost:5163 
+2025-03-16 22:09:12.2788 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-03-16 22:09:12.2788 | INFO | Hosting environment: Development 
+2025-03-16 22:09:12.2788 | INFO | Content root path: /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication 
+2025-03-16 22:09:13.5589 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.html - - 
+2025-03-16 22:09:13.6828 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 124.0484ms 
+2025-03-16 22:09:13.6948 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.js - - 
+2025-03-16 22:09:13.6983 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.5873ms 
+2025-03-16 22:09:13.7377 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - 
+2025-03-16 22:09:13.8095 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 71.9736ms 
+2025-03-16 22:09:23.2675 | INFO | Request starting HTTP/1.1 POST https://localhost:7130/auth/login application/json 66 
+2025-03-16 22:09:23.3713 | INFO | Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'System.IdentityModel.Tokens.Jwt.JwtSecurityToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignatureAndIssuerSecurityKey(String token, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2025-03-16 22:09:23.3828 | INFO | Bearer was not authenticated. Failure message: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'System.IdentityModel.Tokens.Jwt.JwtSecurityToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details. 
+2025-03-16 22:09:23.3840 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-16 22:09:23.3932 | INFO | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.DTO.LoginDTO) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-16 22:09:23.5018 | INFO | User Login Started 
+2025-03-16 22:09:23.5018 | INFO | Login in Business Layer 
+2025-03-16 22:09:23.5063 | INFO | checking if user exist or not 
+2025-03-16 22:09:23.7328 | INFO | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-16 22:09:24.0863 | INFO | Executed DbCommand (30ms) [Parameters=[@__loginDTO_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDTO_Email_0 
+2025-03-16 22:09:24.1319 | INFO | User details Found in Database 
+2025-03-16 22:09:24.1455 | INFO | User Login Successfull 
+2025-03-16 22:09:24.1479 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[ModelLayer.DTO.UserResponseDTO, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-16 22:09:24.1541 | INFO | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 758.8632ms 
+2025-03-16 22:09:24.1541 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-16 22:09:24.1562 | INFO | Request finished HTTP/1.1 POST https://localhost:7130/auth/login application/json 66 - 200 - application/json;+charset=utf-8 888.8393ms 
+2025-03-16 22:12:25.9654 | INFO | Starting the application 
+2025-03-16 22:12:26.3998 | INFO | User profile is available. Using '/Users/rahulkumarair/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-16 22:12:26.6225 | INFO | Now listening on: https://localhost:7130 
+2025-03-16 22:12:26.6485 | INFO | Now listening on: http://localhost:5163 
+2025-03-16 22:12:26.6485 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-03-16 22:12:26.6485 | INFO | Hosting environment: Development 
+2025-03-16 22:12:26.6485 | INFO | Content root path: /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication 
+2025-03-16 22:12:27.8163 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.html - - 
+2025-03-16 22:12:27.9310 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 115.1114ms 
+2025-03-16 22:12:27.9419 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.js - - 
+2025-03-16 22:12:27.9457 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.9170ms 
+2025-03-16 22:12:27.9846 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - 
+2025-03-16 22:12:28.0568 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 72.3683ms 
+2025-03-16 22:12:46.7433 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/HelloGreeting - - 
+2025-03-16 22:12:46.8442 | INFO | Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateAudience(IEnumerable`1 audiences, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2025-03-16 22:12:46.8546 | INFO | Bearer was not authenticated. Failure message: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null. 
+2025-03-16 22:12:46.8572 | INFO | Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-03-16 22:12:46.8598 | INFO | AuthenticationScheme: Bearer was challenged. 
+2025-03-16 22:12:46.8598 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/HelloGreeting - - - 401 0 - 116.6790ms 
+2025-03-16 22:13:07.3217 | INFO | Request starting HTTP/1.1 POST https://localhost:7130/auth/login application/json 47 
+2025-03-16 22:13:07.3534 | INFO | Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateAudience(IEnumerable`1 audiences, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2025-03-16 22:13:07.3534 | INFO | Bearer was not authenticated. Failure message: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null. 
+2025-03-16 22:13:07.3570 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-16 22:13:07.3744 | INFO | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.DTO.LoginDTO) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-16 22:13:07.4886 | INFO | User Login Started 
+2025-03-16 22:13:07.4886 | INFO | Login in Business Layer 
+2025-03-16 22:13:07.4925 | INFO | checking if user exist or not 
+2025-03-16 22:13:07.7160 | INFO | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-16 22:13:08.0614 | INFO | Executed DbCommand (28ms) [Parameters=[@__loginDTO_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDTO_Email_0 
+2025-03-16 22:13:08.1066 | INFO | User details Found in Database 
+2025-03-16 22:13:08.1198 | INFO | User Login Successfull 
+2025-03-16 22:13:08.1223 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[ModelLayer.DTO.UserResponseDTO, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-16 22:13:08.1297 | INFO | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 751.3094ms 
+2025-03-16 22:13:08.1297 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-16 22:13:08.1318 | INFO | Request finished HTTP/1.1 POST https://localhost:7130/auth/login application/json 47 - 200 - application/json;+charset=utf-8 810.1365ms 
+2025-03-16 22:13:21.7522 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/HelloGreeting - - 
+2025-03-16 22:13:21.7532 | INFO | Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateAudience(IEnumerable`1 audiences, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2025-03-16 22:13:21.7532 | INFO | Bearer was not authenticated. Failure message: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null. 
+2025-03-16 22:13:21.7553 | INFO | Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-03-16 22:13:21.7553 | INFO | AuthenticationScheme: Bearer was challenged. 
+2025-03-16 22:13:21.7561 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/HelloGreeting - - - 401 0 - 4.0377ms 
+2025-03-16 22:13:36.7476 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/HelloGreeting - - 
+2025-03-16 22:13:36.7492 | INFO | Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateAudience(IEnumerable`1 audiences, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2025-03-16 22:13:36.7492 | INFO | Bearer was not authenticated. Failure message: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null. 
+2025-03-16 22:13:36.7506 | INFO | Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-03-16 22:13:36.7506 | INFO | AuthenticationScheme: Bearer was challenged. 
+2025-03-16 22:13:36.7511 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/HelloGreeting - - - 401 0 - 3.6315ms 
+2025-03-16 22:14:07.1789 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/HelloGreeting application/json 66 
+2025-03-16 22:14:07.1809 | INFO | Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateAudience(IEnumerable`1 audiences, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2025-03-16 22:14:07.1809 | INFO | Bearer was not authenticated. Failure message: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null. 
+2025-03-16 22:14:07.1809 | INFO | Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-03-16 22:14:07.1809 | INFO | AuthenticationScheme: Bearer was challenged. 
+2025-03-16 22:14:07.1809 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/HelloGreeting application/json 66 - 401 0 - 2.8564ms 
+2025-03-16 22:14:32.0461 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/HelloGreeting/SimpleGreeting - - 
+2025-03-16 22:14:32.0475 | INFO | Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateAudience(IEnumerable`1 audiences, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2025-03-16 22:14:32.0475 | INFO | Bearer was not authenticated. Failure message: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null. 
+2025-03-16 22:14:32.0481 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetSimpleGreeting (HelloGreetingApplication)' 
+2025-03-16 22:14:32.0497 | INFO | Route matched with {action = "GetSimpleGreeting", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetSimpleGreeting() on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication). 
+2025-03-16 22:14:32.0530 | INFO | Executing Simple Greeting  
+2025-03-16 22:14:32.0530 | INFO | Returning Hello world from Business Layer 
+2025-03-16 22:14:32.0530 | INFO | GetSimpleGreeting executed successfully 
+2025-03-16 22:14:32.0540 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-16 22:14:32.0575 | INFO | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.GetSimpleGreeting (HelloGreetingApplication) in 7.6436ms 
+2025-03-16 22:14:32.0575 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetSimpleGreeting (HelloGreetingApplication)' 
+2025-03-16 22:14:32.0579 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/HelloGreeting/SimpleGreeting - - - 200 - application/json;+charset=utf-8 11.7850ms 
+2025-03-16 22:15:24.3851 | INFO | Starting the application 
+2025-03-16 22:15:24.8049 | INFO | User profile is available. Using '/Users/rahulkumarair/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-16 22:15:25.0488 | INFO | Now listening on: https://localhost:7130 
+2025-03-16 22:15:25.0488 | INFO | Now listening on: http://localhost:5163 
+2025-03-16 22:15:25.0504 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-03-16 22:15:25.0510 | INFO | Hosting environment: Development 
+2025-03-16 22:15:25.0510 | INFO | Content root path: /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication 
+2025-03-16 22:15:26.2880 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.html - - 
+2025-03-16 22:15:26.4031 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 114.6222ms 
+2025-03-16 22:15:26.4155 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.js - - 
+2025-03-16 22:15:26.4182 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.js - - - 200 - application/javascript;charset=utf-8 2.7428ms 
+2025-03-16 22:15:26.4566 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - 
+2025-03-16 22:15:26.5296 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 73.0844ms 
+2025-03-16 22:15:45.5181 | INFO | Request starting HTTP/1.1 POST https://localhost:7130/auth/login application/json 47 
+2025-03-16 22:15:45.5278 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-16 22:15:45.5441 | INFO | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.DTO.LoginDTO) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-16 22:15:45.6592 | INFO | User Login Started 
+2025-03-16 22:15:45.6592 | INFO | Login in Business Layer 
+2025-03-16 22:15:45.6628 | INFO | checking if user exist or not 
+2025-03-16 22:15:45.8823 | INFO | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-16 22:15:46.2387 | INFO | Executed DbCommand (31ms) [Parameters=[@__loginDTO_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDTO_Email_0 
+2025-03-16 22:15:46.2835 | INFO | User details Found in Database 
+2025-03-16 22:15:46.3374 | INFO | User Login Successfull 
+2025-03-16 22:15:46.3398 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[ModelLayer.DTO.UserResponseDTO, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-16 22:15:46.3459 | INFO | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 799.0871ms 
+2025-03-16 22:15:46.3459 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-16 22:15:46.3483 | INFO | Request finished HTTP/1.1 POST https://localhost:7130/auth/login application/json 47 - 200 - application/json;+charset=utf-8 830.4433ms 
+2025-03-16 22:16:04.9629 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/HelloGreeting - - 
+2025-03-16 22:16:05.0156 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetMethod (HelloGreetingApplication)' 
+2025-03-16 22:16:05.0167 | INFO | Route matched with {action = "GetMethod", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetMethod() on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication). 
+2025-03-16 22:16:05.0177 | INFO | Executing Get Method 
+2025-03-16 22:16:05.0177 | INFO | Get request successful 
+2025-03-16 22:16:05.0177 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-16 22:16:05.0194 | INFO | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.GetMethod (HelloGreetingApplication) in 2.5657ms 
+2025-03-16 22:16:05.0194 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetMethod (HelloGreetingApplication)' 
+2025-03-16 22:16:05.0194 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/HelloGreeting - - - 200 - application/json;+charset=utf-8 56.6549ms 
+2025-03-16 22:19:33.5931 | INFO | Starting the application 
+2025-03-16 22:19:34.0249 | INFO | User profile is available. Using '/Users/rahulkumarair/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-16 22:19:34.2956 | INFO | Now listening on: https://localhost:7130 
+2025-03-16 22:19:34.2963 | INFO | Now listening on: http://localhost:5163 
+2025-03-16 22:19:34.2963 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-03-16 22:19:34.2963 | INFO | Hosting environment: Development 
+2025-03-16 22:19:34.2963 | INFO | Content root path: /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication 
+2025-03-16 22:19:35.5449 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.html - - 
+2025-03-16 22:19:35.6617 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 117.0582ms 
+2025-03-16 22:19:35.6762 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.js - - 
+2025-03-16 22:19:35.6800 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.7720ms 
+2025-03-16 22:19:35.7193 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - 
+2025-03-16 22:19:35.7927 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 73.5052ms 
+2025-03-16 22:19:53.4970 | INFO | Request starting HTTP/1.1 POST https://localhost:7130/auth/login application/json 55 
+2025-03-16 22:19:53.5095 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-16 22:19:53.5250 | INFO | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.DTO.LoginDTO) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-16 22:19:53.6388 | INFO | User Login Started 
+2025-03-16 22:19:53.6389 | INFO | Login in Business Layer 
+2025-03-16 22:19:53.6427 | INFO | checking if user exist or not 
+2025-03-16 22:19:53.8620 | INFO | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-16 22:19:54.2157 | INFO | Executed DbCommand (28ms) [Parameters=[@__loginDTO_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDTO_Email_0 
+2025-03-16 22:19:54.2607 | INFO | User details Found in Database 
+2025-03-16 22:19:54.3154 | INFO | User Login Successfull 
+2025-03-16 22:19:54.3174 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[ModelLayer.DTO.UserResponseDTO, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-16 22:19:54.3241 | INFO | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 796.4205ms 
+2025-03-16 22:19:54.3241 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-16 22:19:54.3263 | INFO | Request finished HTTP/1.1 POST https://localhost:7130/auth/login application/json 55 - 200 - application/json;+charset=utf-8 829.3631ms 
+2025-03-16 22:20:12.2913 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/HelloGreeting - - 
+2025-03-16 22:20:12.3440 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetMethod (HelloGreetingApplication)' 
+2025-03-16 22:20:12.3451 | INFO | Route matched with {action = "GetMethod", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetMethod() on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication). 
+2025-03-16 22:20:12.3460 | INFO | Executing Get Method 
+2025-03-16 22:20:12.3460 | INFO | Get request successful 
+2025-03-16 22:20:12.3460 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-16 22:20:12.3477 | INFO | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.GetMethod (HelloGreetingApplication) in 2.5373ms 
+2025-03-16 22:20:12.3477 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetMethod (HelloGreetingApplication)' 
+2025-03-16 22:20:12.3479 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/HelloGreeting - - - 200 - application/json;+charset=utf-8 56.5195ms 
