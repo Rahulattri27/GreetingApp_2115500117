@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using RepositoryLayer.Context;
 using Middlewares.GlobalExceptionHandler;
 using Microsoft.OpenApi.Models;
+using RepositoryLayer.Hashing;
 using System.Reflection;
 
 //Setup the Nlog from nlog.config and start the Nlog
@@ -33,6 +34,9 @@ try
     // Add services to the container.
     builder.Services.AddScoped<IGreetingBL, GreetingBL>();
     builder.Services.AddScoped<IGreetingRL, GreetingRL>();
+    builder.Services.AddScoped<IUserBL, UserBL>();
+    builder.Services.AddScoped<IUserRL, UserRL>();
+    builder.Services.AddScoped<Password_Hash>();
     builder.Services.AddControllers();
 
     // Add Swagger services

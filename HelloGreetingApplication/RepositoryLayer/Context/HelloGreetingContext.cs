@@ -7,6 +7,7 @@ namespace RepositoryLayer.Context
 	{
 		public HelloGreetingContext(DbContextOptions<HelloGreetingContext> options) : base(options) { }
 		public DbSet<GreetingModel> Greetings { get; set;}
+        public DbSet<User> Users { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

@@ -11,6 +11,7 @@
           "BusinessLayer": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.36",
           "Middlewares": "1.0.0",
+          "ModelLayer": "1.0.0",
           "NLog": "5.4.0",
           "NLog.Extensions.Logging": "5.4.0",
           "NLog.Web.AspNetCore": "5.4.0",

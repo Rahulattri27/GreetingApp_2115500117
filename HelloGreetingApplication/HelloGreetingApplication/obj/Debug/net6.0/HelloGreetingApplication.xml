@@ -95,5 +95,25 @@
             <param name="id">id of greeting to delete</param>
             <returns>Success or failure response</returns>
         </member>
+        <member name="M:HelloGreetingApplication.Controllers.UserController.#ctor(BusinessLayer.Interface.IUserBL,Microsoft.Extensions.Logging.ILogger{HelloGreetingApplication.Controllers.UserController})">
+            <summary>
+            Constructor to Initialize the instance
+            </summary>
+            <param name="userBL">The Business layer service for user</param>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.UserController.Register(ModelLayer.DTO.RegisterDTO)">
+            <summary>
+            Registers a new user
+            </summary>
+            <param name="registerDTO">User Details</param>
+            <returns> Success or Failure Response</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.UserController.Login(ModelLayer.DTO.LoginDTO)">
+            <summary>
+            Logs in an existing user
+            </summary>
+            <param name="login">User credentials for login</param>
+            <returns>Success or Failure Message</returns>
+        </member>
     </members>
 </doc>

@@ -3295,6 +3295,7 @@
       "BusinessLayer >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.36",
       "Middlewares >= 1.0.0",
+      "ModelLayer >= 1.0.0",
       "NLog >= 5.4.0",
       "NLog.Extensions.Logging >= 5.4.0",
       "NLog.Web.AspNetCore >= 5.4.0",
@@ -3332,6 +3333,9 @@
             },
             "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/Middlewares/Middlewares.csproj": {
               "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/Middlewares/Middlewares.csproj"
+            },
+            "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj": {
+              "projectPath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/ModelLayer/ModelLayer.csproj"
             }
           }
         }
