@@ -3,6 +3,7 @@ using ModelLayer.Model;
 using Microsoft.Extensions.Logging;
 using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace HelloGreetingApplication.Controllers;
 ///<summary>
@@ -24,7 +25,6 @@ public class HelloGreetingController : ControllerBase
         _logger = logger;
         _greetingBL = greetingBL;
     }
-
 
     ///<summary>
     /// Get method to get the Greeting Message
@@ -187,9 +187,20 @@ public class HelloGreetingController : ControllerBase
     {
         try
         {
-            _logger.LogInformation("Creating the greeting in database");
-            string message = _greetingBL.Create(greeting);
             var response = new ResponseModel<string>();
+            var userId = User.FindFirst("UserId")?.Value;
+            if (userId == null)
+            {
+                _logger.LogInformation("Unauthorized user");
+                response.Success = false;
+                response.Message = "Unauthorized user";
+                return Unauthorized(response);
+            }
+            _logger.LogInformation("Creating the greeting in database");
+            greeting.UserId = int.Parse(userId);
+            greeting.User = null;
+            string message = _greetingBL.Create(greeting);
+            
             if(message== "Successfully added Greeting"){
                 response.Success = true;
                 response.Message = "Greeting added to database";
@@ -232,7 +243,6 @@ public class HelloGreetingController : ControllerBase
             _logger.LogInformation("Get the Greeting from database");
             var result = _greetingBL.GetDatabaseGreeting();
 
-
             response.Success = true;
             response.Message = "Get the Greetings from Database";
             response.Data = result;
@@ -256,9 +266,18 @@ public class HelloGreetingController : ControllerBase
     [Authorize]
     public IActionResult FindGreeting(int id)
     {
-        var response = new ResponseModel<GreetingModel>();
+        var response = new ResponseModel<List<GreetingModel>>();
         try
         {
+            var userIdClaim = User.FindFirst("UserId")?.Value;
+            if (userIdClaim==null || int.Parse(userIdClaim) != id)
+            {
+                response.Success = false;
+                response.Message = "Unauthorized user";
+                return Unauthorized(response);
+            }
+
+            int userId = int.Parse(userIdClaim);
             _logger.LogInformation("find the greeting from database");
             var result = _greetingBL.FindGreeting(id);
 
@@ -298,7 +317,25 @@ public class HelloGreetingController : ControllerBase
         var response = new ResponseModel<string>();
         try
         {
+
             _logger.LogInformation("Executing the UpdateMessagebyId");
+            var userIdClaim = User.FindFirst("UserId")?.Value;
+            if (userIdClaim == null) 
+            { 
+                response.Success = false;
+                response.Message = "Unauthorized user";
+                return Unauthorized(response);
+            }
+            int _id = int.Parse(userIdClaim);
+
+            var existingGreeting = _greetingBL.FindGreetingById(id);
+            if (existingGreeting==null || existingGreeting.UserId!= _id)
+            {
+                response.Success = false;
+                response.Message = "Cannot modify that greeting.";
+                return BadRequest(response);
+
+            }
             var result = _greetingBL.UpdateGreeting(id, message);
 
             if (result)
@@ -311,7 +348,7 @@ public class HelloGreetingController : ControllerBase
             response.Success = false;
             response.Message = "updated unsuccessfull";
             response.Data = null;
-            return Ok(response);
+            return NotFound(response);
         }
         catch (Exception ex)
         {
@@ -336,6 +373,23 @@ public class HelloGreetingController : ControllerBase
         try
         {
             _logger.LogInformation("Executing DeleteGreeting in Controller");
+            var userIdClaim = User.FindFirst("UserId")?.Value;
+            if (userIdClaim == null)
+            {
+                response.Success = false;
+                response.Message = "Unauthorized user";
+                return Unauthorized(response);
+            }
+            int _id = int.Parse(userIdClaim);
+
+            var existingGreeting = _greetingBL.FindGreetingById(id);
+            if (existingGreeting == null || existingGreeting.UserId != _id)
+            {
+                response.Success = false;
+                response.Message = "Cannot delete that greeting.";
+                return BadRequest(response);
+
+            }
             bool result = _greetingBL.DeleteGreeting(id);
            
 

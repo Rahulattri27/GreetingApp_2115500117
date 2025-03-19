@@ -34,7 +34,12 @@ namespace RepositoryLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Greetings");
                 });
@@ -72,6 +77,22 @@ namespace RepositoryLayer.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("ModelLayer.Model.GreetingModel", b =>
+                {
+                    b.HasOne("ModelLayer.Model.User", "User")
+                        .WithMany("Greetings")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ModelLayer.Model.User", b =>
+                {
+                    b.Navigation("Greetings");
                 });
 #pragma warning restore 612, 618
         }

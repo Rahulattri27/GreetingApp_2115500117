@@ -60,12 +60,17 @@ namespace BusinessLayer.Services
 		{
 			return _greetingRL.GetDataBase();
 		}
+		public GreetingModel? FindGreetingById(int id)
+		{
+			_logger.LogInformation("Find the greeting on id.");
+			return _greetingRL.Find(id);
+		}
 
 		//method to find the greeting on id in database
-		public GreetingModel FindGreeting(int id)
+		public List<GreetingModel> FindGreeting(int userid)
 		{
 			_logger.LogInformation("Returing the greeting if found.");
-			return _greetingRL.FindGreeting(id);
+			return _greetingRL.FindGreeting(userid);
 			
 		}
 		//method to update the greeting on basis of id

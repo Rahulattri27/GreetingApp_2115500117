@@ -12,8 +12,8 @@ using RepositoryLayer.Context;
 namespace RepositoryLayer.Migrations
 {
     [DbContext(typeof(HelloGreetingContext))]
-    [Migration("20250316174949_InitialToken")]
-    partial class InitialToken
+    [Migration("20250319070419_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,7 +36,12 @@ namespace RepositoryLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Greetings");
                 });
@@ -74,6 +79,22 @@ namespace RepositoryLayer.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("ModelLayer.Model.GreetingModel", b =>
+                {
+                    b.HasOne("ModelLayer.Model.User", "User")
+                        .WithMany("Greetings")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ModelLayer.Model.User", b =>
+                {
+                    b.Navigation("Greetings");
                 });
 #pragma warning restore 612, 618
         }

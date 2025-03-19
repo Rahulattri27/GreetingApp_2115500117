@@ -95,6 +95,7 @@ namespace RepositoryLayer.Services
             var claims = new[]
             {
                 new Claim(ClaimTypes.Name, user.Email),
+                new Claim("UserId",user.UserId.ToString())
             };
 
             var token = new JwtSecurityToken(

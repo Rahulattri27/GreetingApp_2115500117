@@ -1,4 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
+
 namespace ModelLayer.Model
 {
     /// <summary>
@@ -10,5 +13,11 @@ namespace ModelLayer.Model
         public int Id { get; set; }
         [Required]
         public string Message { get; set; } = "";
+
+        [Required]
+        public int UserId { get; set; }
+        [JsonIgnore]
+        [ForeignKey("UserId")]
+        public virtual User? User { get; set; }
     }
 }
