@@ -778,6 +778,56 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Pipelines.Sockets.Unofficial/2.2.8": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Pipelines": "5.0.1"
+        },
+        "compile": {
+          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "RabbitMQ.Client/6.3.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.4",
+          "System.Threading.Channels": "4.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "StackExchange.Redis/2.8.31": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "Pipelines.Sockets.Unofficial": "2.2.8"
+        },
+        "compile": {
+          "lib/net6.0/StackExchange.Redis.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/StackExchange.Redis.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/7.3.1": {
         "type": "package",
         "dependencies": {
@@ -947,6 +997,19 @@
         },
         "runtime": {
           "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.IO.Pipelines/5.0.1": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {
             "related": ".xml"
           }
         }
@@ -1201,6 +1264,19 @@
           "buildTransitive/netcoreapp3.1/System.Text.Json.targets": {}
         }
       },
+      "System.Threading.Channels/4.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Threading.Channels.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Threading.Channels.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Threading.Tasks.Extensions/4.5.4": {
         "type": "package",
         "compile": {
@@ -1216,7 +1292,8 @@
         "dependencies": {
           "ModelLayer": "1.0.0",
           "NLog.Web.AspNetCore": "5.4.0",
-          "RepositoryLayer": "1.0.0"
+          "RepositoryLayer": "1.0.0",
+          "StackExchange.Redis": "2.8.31"
         },
         "compile": {
           "bin/placeholder/BusinessLayer.dll": {}
@@ -1258,6 +1335,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.36",
           "Microsoft.Extensions.Configuration.Json": "6.0.1",
           "ModelLayer": "1.0.0",
+          "RabbitMQ.Client": "6.3.1",
           "System.Security.Permissions": "9.0.2"
         },
         "compile": {
@@ -2527,6 +2605,68 @@
         "nlog.web.aspnetcore.nuspec"
       ]
     },
+    "Pipelines.Sockets.Unofficial/2.2.8": {
+      "sha512": "zG2FApP5zxSx6OcdJQLbZDk2AVlN2BNQD6MorwIfV6gVj0RRxWPEp2LXAxqDGZqeNV1Zp0BNPcNaey/GXmTdvQ==",
+      "type": "package",
+      "path": "pipelines.sockets.unofficial/2.2.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/Pipelines.Sockets.Unofficial.dll",
+        "lib/net461/Pipelines.Sockets.Unofficial.xml",
+        "lib/net472/Pipelines.Sockets.Unofficial.dll",
+        "lib/net472/Pipelines.Sockets.Unofficial.xml",
+        "lib/net5.0/Pipelines.Sockets.Unofficial.dll",
+        "lib/net5.0/Pipelines.Sockets.Unofficial.xml",
+        "lib/netcoreapp3.1/Pipelines.Sockets.Unofficial.dll",
+        "lib/netcoreapp3.1/Pipelines.Sockets.Unofficial.xml",
+        "lib/netstandard2.0/Pipelines.Sockets.Unofficial.dll",
+        "lib/netstandard2.0/Pipelines.Sockets.Unofficial.xml",
+        "lib/netstandard2.1/Pipelines.Sockets.Unofficial.dll",
+        "lib/netstandard2.1/Pipelines.Sockets.Unofficial.xml",
+        "pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+        "pipelines.sockets.unofficial.nuspec"
+      ]
+    },
+    "RabbitMQ.Client/6.3.1": {
+      "sha512": "l70P6ySsVFS+QCwLldem92GCXYdwvg0X6c+Ty5Yv543eVYVcPtNUhNhmo8FsNVxQZuezMl3rfDJErIvqNJt1CA==",
+      "type": "package",
+      "path": "rabbitmq.client/6.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net461/RabbitMQ.Client.dll",
+        "lib/net461/RabbitMQ.Client.xml",
+        "lib/netstandard2.0/RabbitMQ.Client.dll",
+        "lib/netstandard2.0/RabbitMQ.Client.xml",
+        "rabbitmq.client.6.3.1.nupkg.sha512",
+        "rabbitmq.client.nuspec"
+      ]
+    },
+    "StackExchange.Redis/2.8.31": {
+      "sha512": "RCHVQa9Zke8k0oBgJn1Yl6BuYy8i6kv+sdMObiH60nOwD6QvWAjxdDwOm+LO78E8WsGiPqgOuItkz98fPS6haQ==",
+      "type": "package",
+      "path": "stackexchange.redis/2.8.31",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/StackExchange.Redis.dll",
+        "lib/net461/StackExchange.Redis.xml",
+        "lib/net472/StackExchange.Redis.dll",
+        "lib/net472/StackExchange.Redis.xml",
+        "lib/net6.0/StackExchange.Redis.dll",
+        "lib/net6.0/StackExchange.Redis.xml",
+        "lib/net8.0/StackExchange.Redis.dll",
+        "lib/net8.0/StackExchange.Redis.xml",
+        "lib/netcoreapp3.1/StackExchange.Redis.dll",
+        "lib/netcoreapp3.1/StackExchange.Redis.xml",
+        "lib/netstandard2.0/StackExchange.Redis.dll",
+        "lib/netstandard2.0/StackExchange.Redis.xml",
+        "stackexchange.redis.2.8.31.nupkg.sha512",
+        "stackexchange.redis.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/7.3.1": {
       "sha512": "6u8w+UXp/sF89xQjfydWw6znQrUpbpFOmEIs8ODE+S0bV+mCQ9dNP4mk+HRsGHylpDaP5KSYSCEfFSgluLXHsA==",
       "type": "package",
@@ -2767,6 +2907,32 @@
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
         "system.identitymodel.tokens.jwt.6.36.0.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
+      ]
+    },
+    "System.IO.Pipelines/5.0.1": {
+      "sha512": "qEePWsaq9LoEEIqhbGe6D5J8c9IqQOUuTzzV6wn1POlfdLkJliZY3OlB0j0f17uMWlqZYjH7txj+2YbyrIA8Yg==",
+      "type": "package",
+      "path": "system.io.pipelines/5.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.IO.Pipelines.dll",
+        "lib/net461/System.IO.Pipelines.xml",
+        "lib/netcoreapp3.0/System.IO.Pipelines.dll",
+        "lib/netcoreapp3.0/System.IO.Pipelines.xml",
+        "lib/netstandard1.3/System.IO.Pipelines.dll",
+        "lib/netstandard1.3/System.IO.Pipelines.xml",
+        "lib/netstandard2.0/System.IO.Pipelines.dll",
+        "lib/netstandard2.0/System.IO.Pipelines.xml",
+        "ref/netcoreapp2.0/System.IO.Pipelines.dll",
+        "ref/netcoreapp2.0/System.IO.Pipelines.xml",
+        "system.io.pipelines.5.0.1.nupkg.sha512",
+        "system.io.pipelines.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Memory/4.5.4": {
@@ -3266,6 +3432,30 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Threading.Channels/4.7.1": {
+      "sha512": "6akRtHK/wab3246t4p5v3HQrtQk8LboOt5T4dtpNgsp3zvDeM4/Gx8V12t0h+c/W9/enUrilk8n6EQqdQorZAA==",
+      "type": "package",
+      "path": "system.threading.channels/4.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Threading.Channels.dll",
+        "lib/net461/System.Threading.Channels.xml",
+        "lib/netcoreapp3.0/System.Threading.Channels.dll",
+        "lib/netcoreapp3.0/System.Threading.Channels.xml",
+        "lib/netstandard1.3/System.Threading.Channels.dll",
+        "lib/netstandard1.3/System.Threading.Channels.xml",
+        "lib/netstandard2.0/System.Threading.Channels.dll",
+        "lib/netstandard2.0/System.Threading.Channels.xml",
+        "system.threading.channels.4.7.1.nupkg.sha512",
+        "system.threading.channels.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Threading.Tasks.Extensions/4.5.4": {
       "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "type": "package",
@@ -3334,6 +3524,8 @@
       "NLog >= 5.4.0",
       "NLog.Extensions.Logging >= 5.4.0",
       "NLog.Web.AspNetCore >= 5.4.0",
+      "RabbitMQ.Client >= 6.3.1",
+      "StackExchange.Redis >= 2.8.31",
       "Swashbuckle.AspNetCore >= 7.3.1",
       "System.IdentityModel.Tokens.Jwt >= 6.36.0"
     ]
@@ -3407,6 +3599,14 @@
           "NLog.Web.AspNetCore": {
             "target": "Package",
             "version": "[5.4.0, )"
+          },
+          "RabbitMQ.Client": {
+            "target": "Package",
+            "version": "[6.3.1, )"
+          },
+          "StackExchange.Redis": {
+            "target": "Package",
+            "version": "[2.8.31, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

@@ -48,6 +48,10 @@
             "NLog.Web.AspNetCore": {
               "target": "Package",
               "version": "[5.4.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.31, )"
             }
           },
           "imports": [
@@ -279,6 +283,10 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.3.1, )"
             },
             "System.Security.Permissions": {
               "target": "Package",

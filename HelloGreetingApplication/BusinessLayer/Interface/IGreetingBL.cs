@@ -8,10 +8,10 @@ namespace BusinessLayer.Interface
 		string SimpleGreeting();
 		string GreetingMessage(string? FirstName, string? LastName);
 		string Create(GreetingModel greeting);
-		List<GreetingModel> GetDatabaseGreeting();
-		List<GreetingModel> FindGreeting(int id);
-		bool UpdateGreeting(int id, string Message);
-		bool DeleteGreeting(int id);
+		Task<List<GreetingModel>> GetDatabaseGreeting();
+		Task<List<GreetingModel>> FindGreeting(int id);
+		Task<bool> UpdateGreeting(int id, string Message);
+		Task<bool> DeleteGreeting(int id);
 		GreetingModel? FindGreetingById(int id);
     }
 }

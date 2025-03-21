@@ -17,6 +17,7 @@ public class HelloGreetingController : ControllerBase
     
     private readonly ILogger<HelloGreetingController> _logger;
     private readonly IGreetingBL _greetingBL;
+
     /// <summary>
     /// create instances of objects
     /// </summary>
@@ -235,13 +236,13 @@ public class HelloGreetingController : ControllerBase
     /// <returns>return all the greeting  from database</returns>
     [HttpGet("Greetings")]
     [Authorize]
-    public IActionResult GetGreetings()
+    public async Task<IActionResult> GetGreetings()
     {
         var response = new ResponseModel<List<GreetingModel>>();
         try
         {
             _logger.LogInformation("Get the Greeting from database");
-            var result = _greetingBL.GetDatabaseGreeting();
+            var result = await _greetingBL.GetDatabaseGreeting();
 
             response.Success = true;
             response.Message = "Get the Greetings from Database";
@@ -264,7 +265,7 @@ public class HelloGreetingController : ControllerBase
     /// <returns>return the greeting if id found</returns>
     [HttpGet("find/{id}")]
     [Authorize]
-    public IActionResult FindGreeting(int id)
+    public async Task<IActionResult> FindGreeting(int id)
     {
         var response = new ResponseModel<List<GreetingModel>>();
         try
@@ -279,7 +280,7 @@ public class HelloGreetingController : ControllerBase
 
             int userId = int.Parse(userIdClaim);
             _logger.LogInformation("find the greeting from database");
-            var result = _greetingBL.FindGreeting(id);
+            var result = await _greetingBL.FindGreeting(id);
 
 
             if (result == null)
@@ -312,7 +313,7 @@ public class HelloGreetingController : ControllerBase
     /// <returns>Success or Failure response</returns>
     [HttpPatch("update/{id}")]
     [Authorize]
-    public IActionResult UpdateGreetingById(int id,string message)
+    public async Task<IActionResult> UpdateGreetingById(int id,string message)
     {
         var response = new ResponseModel<string>();
         try
@@ -336,7 +337,7 @@ public class HelloGreetingController : ControllerBase
                 return BadRequest(response);
 
             }
-            var result = _greetingBL.UpdateGreeting(id, message);
+            var result =await  _greetingBL.UpdateGreeting(id, message);
 
             if (result)
             {
@@ -367,7 +368,7 @@ public class HelloGreetingController : ControllerBase
     /// <returns>Success or failure response</returns>
     [HttpDelete("delete/{id}")]
     [Authorize]
-    public IActionResult DeleteGreeting(int id)
+    public async Task<IActionResult> DeleteGreeting(int id)
     {
         var response = new ResponseModel<string>();
         try
@@ -390,7 +391,7 @@ public class HelloGreetingController : ControllerBase
                 return BadRequest(response);
 
             }
-            bool result = _greetingBL.DeleteGreeting(id);
+            bool result = await _greetingBL.DeleteGreeting(id);
            
 
             if (result)

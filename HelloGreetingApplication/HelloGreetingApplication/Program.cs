@@ -15,6 +15,8 @@ using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using StackExchange.Redis;
+using ModelLayer.DTO;
 
 //Setup the Nlog from nlog.config and start the Nlog
 var logger = NLog.LogManager.Setup().LoadConfigurationFromFile("nlog.config").GetCurrentClassLogger();
@@ -41,6 +43,27 @@ try
     builder.Services.AddScoped<IUserRL, UserRL>();
     builder.Services.AddScoped<Password_Hash>();
     builder.Services.AddScoped<IEmailService, EmailService>();
+    // Add RabbitMQ Configuration
+    builder.Services.Configure<RabbitMQConfig>(builder.Configuration.GetSection("RabbitMQ"));
+
+    // Register Publisher
+    builder.Services.AddSingleton<RabbitMQPublisher>();
+    builder.Services.AddHostedService<RabbitMQConsumer>();
+
+
+    // Configure Redis Connection Multiplexer
+    builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+    {
+        var configuration = builder.Configuration.GetSection("Redis")["ConnectionString"];
+        return ConnectionMultiplexer.Connect(configuration);
+    });
+
+    // Register IDatabase as a scoped service
+    builder.Services.AddScoped<IDatabase>(sp =>
+    {
+        var multiplexer = sp.GetRequiredService<IConnectionMultiplexer>();
+        return multiplexer.GetDatabase();
+    });
     builder.Services.AddControllers();
 
     // Add Swagger services
@@ -110,6 +133,12 @@ try
 
     var app = builder.Build();
 
+    app.UseCors(policy => policy
+        .AllowAnyOrigin()  // Allows requests from any frontend
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+    );
+
     app.UseMiddleware<GlobalExceptionMiddleware>();
 
     // Configure the HTTP request pipeline.
@@ -126,12 +155,19 @@ try
         app.UseSwaggerUI();
     }
 
-
+    app.UseCors();
     app.MapControllers();
 
     app.Run();
 }
-catch(Exception ex)
+catch (AggregateException ex)
+{
+    foreach (var inner in ex.InnerExceptions)
+    {
+        Console.WriteLine($"Inner Exception: {inner.Message}");
+    }
+}
+catch (Exception ex)
 {
     logger.Error(ex, "Application stopped due to an exception");
 }
