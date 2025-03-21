@@ -1,0 +1,200 @@
+2025-03-21 10:55:01.7408 | INFO | Starting the application 
+2025-03-21 10:55:02.0693 | INFO | User profile is available. Using '/Users/rahulkumarair/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-21 10:55:02.3987 | INFO | Now listening on: https://localhost:7130 
+2025-03-21 10:55:02.3988 | INFO | Now listening on: http://localhost:5163 
+2025-03-21 10:55:02.4000 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-03-21 10:55:02.4000 | INFO | Hosting environment: Development 
+2025-03-21 10:55:02.4000 | INFO | Content root path: /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication 
+2025-03-21 10:55:03.6091 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.html - - 
+2025-03-21 10:55:03.6827 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 73.5080ms 
+2025-03-21 10:55:03.7549 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/swagger-ui.css - - 
+2025-03-21 10:55:03.7549 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.js - - 
+2025-03-21 10:55:03.8852 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.js - - - 200 - application/javascript;charset=utf-8 129.5375ms 
+2025-03-21 10:55:03.8859 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.css - - 
+2025-03-21 10:55:03.8859 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/swagger-ui-bundle.js - - 
+2025-03-21 10:55:03.8871 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/swagger-ui-standalone-preset.js - - 
+2025-03-21 10:55:03.8920 | INFO | The file /swagger-ui-standalone-preset.js was not modified 
+2025-03-21 10:55:03.8920 | INFO | The file /swagger-ui.css was not modified 
+2025-03-21 10:55:03.8920 | INFO | The file /index.css was not modified 
+2025-03-21 10:55:03.8920 | INFO | The file /swagger-ui-bundle.js was not modified 
+2025-03-21 10:55:03.8944 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.css - - - 304 - text/css 8.7893ms 
+2025-03-21 10:55:03.8944 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/swagger-ui-standalone-preset.js - - - 304 - text/javascript 7.4109ms 
+2025-03-21 10:55:03.8951 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/swagger-ui.css - - - 304 - text/css 140.2474ms 
+2025-03-21 10:55:03.8944 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/swagger-ui-bundle.js - - - 304 - text/javascript 8.7896ms 
+2025-03-21 10:55:04.2536 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - 
+2025-03-21 10:55:04.2619 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/favicon-32x32.png - - 
+2025-03-21 10:55:04.2619 | INFO | The file /favicon-32x32.png was not modified 
+2025-03-21 10:55:04.2628 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/favicon-32x32.png - - - 304 - image/png 0.9205ms 
+2025-03-21 10:55:04.3379 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 84.2731ms 
+2025-03-21 10:56:21.6695 | INFO | Request starting HTTP/1.1 POST https://localhost:7130/auth/register application/json 96 
+2025-03-21 10:56:21.6750 | INFO | CORS policy execution successful. 
+2025-03-21 10:56:21.6759 | INFO | No CORS policy found for the specified request. 
+2025-03-21 10:56:21.6770 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)' 
+2025-03-21 10:56:21.6877 | INFO | Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.DTO.RegisterDTO) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-21 10:56:21.7660 | INFO | Starting the registeration 
+2025-03-21 10:56:21.7669 | INFO | User Details in Business Layer 
+2025-03-21 10:56:21.7698 | INFO | checking if user exist or not 
+2025-03-21 10:56:21.9571 | INFO | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-21 10:56:22.1724 | INFO | Executed DbCommand (20ms) [Parameters=[@__userRegisterDTO_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__userRegisterDTO_Email_0 
+2025-03-21 10:56:22.1774 | INFO | User does not exist, So saving user 
+2025-03-21 10:56:22.2430 | INFO | Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [FirstName], [LastName], [PasswordHash], [ResetToken], [ResetTokenExpiry])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [UserId]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [UserId] = scope_identity(); 
+2025-03-21 10:56:22.2569 | INFO | User Details saved in database 
+2025-03-21 10:56:22.3253 | INFO | User Registration event published to RabbitMq 
+2025-03-21 10:56:22.3253 | INFO | Returning register method from repository layer 
+2025-03-21 10:56:22.3253 | INFO | output user from controller 
+2025-03-21 10:56:22.3269 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[ModelLayer.Model.User, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-21 10:56:22.3337 | INFO | Executed action HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication) in 644.6419ms 
+2025-03-21 10:56:22.3337 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)' 
+2025-03-21 10:56:22.3351 | INFO | Request finished HTTP/1.1 POST https://localhost:7130/auth/register application/json 96 - 200 - application/json;+charset=utf-8 665.8344ms 
+2025-03-21 10:56:43.2603 | INFO | Request starting HTTP/1.1 POST https://localhost:7130/auth/login application/json 47 
+2025-03-21 10:56:43.2639 | INFO | CORS policy execution successful. 
+2025-03-21 10:56:43.2639 | INFO | No CORS policy found for the specified request. 
+2025-03-21 10:56:43.2639 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-21 10:56:43.2675 | INFO | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.DTO.LoginDTO) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-21 10:56:43.3060 | INFO | User Login Started 
+2025-03-21 10:56:43.3060 | INFO | Login in Business Layer 
+2025-03-21 10:56:43.3073 | INFO | checking if user exist or not 
+2025-03-21 10:56:43.3182 | INFO | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-21 10:56:43.3284 | INFO | Executed DbCommand (5ms) [Parameters=[@__loginDTO_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginDTO_Email_0 
+2025-03-21 10:56:43.3388 | INFO | User details Found in Database 
+2025-03-21 10:56:43.3938 | INFO | User Login Successfull 
+2025-03-21 10:56:43.3938 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[ModelLayer.DTO.UserResponseDTO, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-21 10:56:43.3950 | INFO | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 127.2532ms 
+2025-03-21 10:56:43.3950 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-21 10:56:43.3950 | INFO | Request finished HTTP/1.1 POST https://localhost:7130/auth/login application/json 47 - 200 - application/json;+charset=utf-8 134.9591ms 
+2025-03-21 10:57:28.3262 | INFO | Request starting HTTP/1.1 POST https://localhost:7130/HelloGreeting/AddNew application/json 56 
+2025-03-21 10:57:28.3275 | INFO | CORS policy execution successful. 
+2025-03-21 10:57:28.3628 | INFO | No CORS policy found for the specified request. 
+2025-03-21 10:57:28.3628 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.CreateGreeting (HelloGreetingApplication)' 
+2025-03-21 10:57:28.3628 | INFO | Route matched with {action = "CreateGreeting", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateGreeting(ModelLayer.Model.GreetingModel) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication). 
+2025-03-21 10:57:28.6164 | INFO | Creating the greeting in database 
+2025-03-21 10:57:28.6171 | INFO | Adding the greeting to repository Layer 
+2025-03-21 10:57:28.6353 | INFO | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-21 10:57:28.6468 | INFO | Executed DbCommand (5ms) [Parameters=[@__greeting_UserId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[UserId] = @__greeting_UserId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END 
+2025-03-21 10:57:28.6587 | INFO | Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Greetings] ([Message], [UserId])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [Greetings]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+2025-03-21 10:57:28.6649 | INFO | Cache cleared after adding a new greeting.  
+2025-03-21 10:57:28.6997 | INFO | Greeting creation event published to rabbitmq 
+2025-03-21 10:57:28.6997 | INFO | Returning response: Successfully added Greeting 
+2025-03-21 10:57:28.6997 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-21 10:57:28.7001 | INFO | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.CreateGreeting (HelloGreetingApplication) in 336.6482ms 
+2025-03-21 10:57:28.7001 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.CreateGreeting (HelloGreetingApplication)' 
+2025-03-21 10:57:28.7001 | INFO | Request finished HTTP/1.1 POST https://localhost:7130/HelloGreeting/AddNew application/json 56 - 200 - application/json;+charset=utf-8 374.1088ms 
+2025-03-21 11:04:23.2009 | INFO | Starting the application 
+2025-03-21 11:04:31.8332 | ERROR | Application stopped due to an exception RabbitMQ.Client.Exceptions.OperationInterruptedException: The AMQP operation was interrupted: AMQP close-reason, initiated by Peer, code=406, text='PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'UserRegistrationQueue' in vhost '/': received 'true' but current is 'false'', classId=50, methodId=10
+   at RabbitMQ.Client.Impl.SimpleBlockingRpcContinuation.GetReply(TimeSpan timeout)
+   at RabbitMQ.Client.Impl.ModelBase.QueueDeclare(String queue, Boolean passive, Boolean durable, Boolean exclusive, Boolean autoDelete, IDictionary`2 arguments)
+   at RabbitMQ.Client.Impl.ModelBase.QueueDeclare(String queue, Boolean durable, Boolean exclusive, Boolean autoDelete, IDictionary`2 arguments)
+   at RabbitMQ.Client.Impl.AutorecoveringModel.QueueDeclare(String queue, Boolean durable, Boolean exclusive, Boolean autoDelete, IDictionary`2 arguments)
+   at BusinessLayer.Services.RabbitMQConsumer.InitializeRabbitMQ() in /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/Services/RabbitMQConsumer.cs:line 42
+   at BusinessLayer.Services.RabbitMQConsumer..ctor(ILogger`1 logger, IServiceProvider serviceProvider, IOptions`1 config) in /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/BusinessLayer/Services/RabbitMQConsumer.cs:line 27
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.ConstructorInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/Program.cs:line 161
+2025-03-21 11:04:43.2606 | INFO | Starting the application 
+2025-03-21 11:04:43.6167 | INFO | RabbitMQ Consumer initialized successfully. 
+2025-03-21 11:04:43.6229 | INFO | User profile is available. Using '/Users/rahulkumarair/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-21 11:04:43.6265 | INFO | Received User Registration Event: {"UserId":2002,"Email":"a@gmail.com","FullName":"Amogh Malviya","RegisterAt":"2025-03-21T05:26:22.257315Z"} 
+2025-03-21 11:04:43.6409 | INFO | Processing User Registration: Amogh Malviya (a@gmail.com) 
+2025-03-21 11:04:43.6409 | INFO | Received Greeting Event: {"GreetingId":2002,"UserID":2002,"Message":"Save Needy "} 
+2025-03-21 11:04:43.6422 | INFO | Processing Greeting Event: Save Needy  for UserId 0 
+2025-03-21 11:04:43.7891 | INFO | Now listening on: https://localhost:7130 
+2025-03-21 11:04:43.8110 | INFO | Now listening on: http://localhost:5163 
+2025-03-21 11:04:43.8110 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-03-21 11:04:43.8118 | INFO | Hosting environment: Development 
+2025-03-21 11:04:43.8118 | INFO | Content root path: /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication 
+2025-03-21 11:04:44.9933 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.html - - 
+2025-03-21 11:04:45.0643 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 71.0733ms 
+2025-03-21 11:04:45.0740 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.js - - 
+2025-03-21 11:04:45.0763 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.js - - - 200 - application/javascript;charset=utf-8 2.3062ms 
+2025-03-21 11:04:45.5275 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - 
+2025-03-21 11:04:45.5943 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 66.8813ms 
+2025-03-21 11:09:31.2193 | INFO | Starting the application 
+2025-03-21 11:12:31.2885 | INFO | Starting the application 
+2025-03-21 11:19:19.3921 | INFO | Starting the application 
+2025-03-21 11:19:19.7203 | INFO | RabbitMQ Consumer initialized successfully. 
+2025-03-21 11:19:19.7266 | INFO | User profile is available. Using '/Users/rahulkumarair/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-21 11:19:19.9167 | INFO | Now listening on: https://localhost:7130 
+2025-03-21 11:19:19.9167 | INFO | Now listening on: http://localhost:5163 
+2025-03-21 11:19:19.9179 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-03-21 11:19:19.9179 | INFO | Hosting environment: Development 
+2025-03-21 11:19:19.9179 | INFO | Content root path: /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication 
+2025-03-21 11:19:21.0580 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.html - - 
+2025-03-21 11:19:21.1392 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 81.4095ms 
+2025-03-21 11:19:21.1525 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/index.js - - 
+2025-03-21 11:19:21.1549 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/index.js - - - 200 - application/javascript;charset=utf-8 2.5292ms 
+2025-03-21 11:19:21.6025 | INFO | Request starting HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - 
+2025-03-21 11:19:21.6849 | INFO | Request finished HTTP/1.1 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 82.5579ms 
+2025-03-21 11:19:50.7192 | INFO | Request starting HTTP/1.1 POST https://localhost:7130/auth/register application/json 94 
+2025-03-21 11:19:50.7384 | INFO | CORS policy execution successful. 
+2025-03-21 11:19:50.7410 | INFO | No CORS policy found for the specified request. 
+2025-03-21 11:19:50.7420 | INFO | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)' 
+2025-03-21 11:19:50.7509 | INFO | Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.DTO.RegisterDTO) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-21 11:19:50.8279 | INFO | Starting the registeration 
+2025-03-21 11:19:50.8287 | INFO | User Details in Business Layer 
+2025-03-21 11:19:50.8314 | INFO | checking if user exist or not 
+2025-03-21 11:19:51.0186 | INFO | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-21 11:19:51.2431 | INFO | Executed DbCommand (20ms) [Parameters=[@__userRegisterDTO_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__userRegisterDTO_Email_0 
+2025-03-21 11:19:51.2485 | INFO | User does not exist, So saving user 
+2025-03-21 11:19:51.3116 | INFO | Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [FirstName], [LastName], [PasswordHash], [ResetToken], [ResetTokenExpiry])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [UserId]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [UserId] = scope_identity(); 
+2025-03-21 11:19:51.3301 | INFO | User Details saved in database 
+2025-03-21 11:19:51.3438 | INFO | Received User Registration Event: {"UserId":2003,"Email":"v@gmail.com","FullName":"vivek Kumar","RegisterAt":"2025-03-21T05:49:51.330542Z"} 
+2025-03-21 11:19:51.3471 | INFO | Processing User Registration: vivek Kumar (v@gmail.com) 
+2025-03-21 11:19:51.3471 | INFO | User Registration event published to RabbitMq 
+2025-03-21 11:19:51.3471 | INFO | Returning register method from repository layer 
+2025-03-21 11:19:51.3471 | INFO | output user from controller 
+2025-03-21 11:19:51.3491 | INFO | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[ModelLayer.Model.User, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-21 11:19:51.3562 | INFO | Executed action HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication) in 603.9299ms 
+2025-03-21 11:19:51.3562 | INFO | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)' 
+2025-03-21 11:19:51.3570 | INFO | Request finished HTTP/1.1 POST https://localhost:7130/auth/register application/json 94 - 200 - application/json;+charset=utf-8 638.4648ms 

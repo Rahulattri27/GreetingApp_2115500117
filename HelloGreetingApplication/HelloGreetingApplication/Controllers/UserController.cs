@@ -57,7 +57,7 @@ namespace HelloGreetingApplication.Controllers
         /// <param name="login">User credentials for login</param>
         /// <returns>Success or Failure Message</returns>
         [HttpPost("login")]
-        public IActionResult Login(LoginDTO login)
+        public IActionResult Login([FromBody] LoginDTO login)
         {
             _logger.LogInformation("User Login Started");
 

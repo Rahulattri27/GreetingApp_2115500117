@@ -13,12 +13,15 @@
   <ItemGroup>
     <None Remove="Services\" />
     <None Remove="Interface\" />
+    <None Remove="Helper\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Interface\" />
+    <Folder Include="Helper\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NLog.Web.AspNetCore" Version="5.4.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.8.31" />
   </ItemGroup>
 </Project>

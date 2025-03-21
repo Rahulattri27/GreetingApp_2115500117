@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gWZYuL2yXscG10SbVcIKAxVg95eWhxEvXR1dVqG1g0GJ23rhyNl/CInAMR8ocb6YpSHRtfn5yvyXFm7lOcZPaw==",
+  "dgSpecHash": "9hOzaabIiJtlGBoc8gSpgR6OKdgjV5776pzIsy0tQyUnGlI/jAeb3LVtyh18Gu8gYs2Mg/RX7P3lzATqZjVZrQ==",
   "success": true,
   "projectFilePath": "/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/Middlewares/Middlewares.csproj",
   "expectedPackageFiles": [
@@ -44,12 +44,16 @@
     "/Users/rahulkumarair/.nuget/packages/nlog/5.4.0/nlog.5.4.0.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/nlog.extensions.logging/5.4.0/nlog.extensions.logging.5.4.0.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/nlog.web.aspnetcore/5.4.0/nlog.web.aspnetcore.5.4.0.nupkg.sha512",
+    "/Users/rahulkumarair/.nuget/packages/pipelines.sockets.unofficial/2.2.8/pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "/Users/rahulkumarair/.nuget/packages/rabbitmq.client/6.3.1/rabbitmq.client.6.3.1.nupkg.sha512",
+    "/Users/rahulkumarair/.nuget/packages/stackexchange.redis/2.8.31/stackexchange.redis.2.8.31.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/system.collections.immutable/6.0.1/system.collections.immutable.6.0.1.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/system.configuration.configurationmanager/6.0.1/system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/system.diagnostics.diagnosticsource/6.0.2/system.diagnostics.diagnosticsource.6.0.2.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/system.drawing.common/4.7.3/system.drawing.common.4.7.3.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/system.formats.asn1/5.0.0/system.formats.asn1.5.0.0.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/system.identitymodel.tokens.jwt/6.36.0/system.identitymodel.tokens.jwt.6.36.0.nupkg.sha512",
+    "/Users/rahulkumarair/.nuget/packages/system.io.pipelines/5.0.1/system.io.pipelines.5.0.1.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/system.memory.data/1.0.2/system.memory.data.1.0.2.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
@@ -63,6 +67,7 @@
     "/Users/rahulkumarair/.nuget/packages/system.text.encoding.codepages/6.0.0/system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/system.text.json/6.0.11/system.text.json.6.0.11.nupkg.sha512",
+    "/Users/rahulkumarair/.nuget/packages/system.threading.channels/4.7.1/system.threading.channels.4.7.1.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.31/microsoft.aspnetcore.app.ref.6.0.31.nupkg.sha512",
     "/Users/rahulkumarair/.nuget/packages/microsoft.netcore.app.ref/6.0.31/microsoft.netcore.app.ref.6.0.31.nupkg.sha512"

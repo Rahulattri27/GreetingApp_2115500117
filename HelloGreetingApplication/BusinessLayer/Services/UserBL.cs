@@ -4,6 +4,7 @@ using ModelLayer.DTO;
 using ModelLayer.Model;
 using RepositoryLayer.Interface;
 using Microsoft.Extensions.Logging;
+using RepositoryLayer.Services;
 
 namespace BusinessLayer.Services
 {
@@ -11,13 +12,15 @@ namespace BusinessLayer.Services
     {
         private readonly ILogger<UserBL> _logger;
        
-            private readonly IUserRL _userRL;
+        private readonly IUserRL _userRL;
+        private readonly RabbitMQPublisher _rabbitMQPublisher;
 
-            //constructor of class
-            public UserBL(IUserRL userRL,ILogger<UserBL> logger)
+        //constructor of class
+        public UserBL(IUserRL userRL,ILogger<UserBL> logger, RabbitMQPublisher rabbitMQPublisher)
             {
             _logger = logger;
             _userRL = userRL;
+            _rabbitMQPublisher = rabbitMQPublisher;
 
             }
 
@@ -31,6 +34,18 @@ namespace BusinessLayer.Services
             {
             _logger.LogInformation("User Details in Business Layer");
             var user = _userRL.RegisterUser(userRegisterDTO);
+            if (user != null)
+            {
+                var message = new
+                {
+                    UserId = user.UserId,
+                    Email = user.Email,
+                    FullName = $"{user.FirstName} {user.LastName}",
+                    RegisterAt = DateTime.UtcNow
+                };
+                _rabbitMQPublisher.PublishMessage("UserRegistrationQueue", message);
+                _logger.LogInformation("User Registration event published to RabbitMq");
+            }
             _logger.LogInformation("Returning register method from repository layer");
             return user;
             }

@@ -697,6 +697,23 @@
           }
         }
       },
+      "RabbitMQ.Client/6.3.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.4",
+          "System.Threading.Channels": "4.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Collections.Immutable/6.0.1": {
         "type": "package",
         "compile": {
@@ -1052,6 +1069,19 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/System.Text.Json.targets": {}
+        }
+      },
+      "System.Threading.Channels/4.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Threading.Channels.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Threading.Channels.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Threading.Tasks.Extensions/4.5.4": {
@@ -2021,6 +2051,22 @@
         "version.txt"
       ]
     },
+    "RabbitMQ.Client/6.3.1": {
+      "sha512": "l70P6ySsVFS+QCwLldem92GCXYdwvg0X6c+Ty5Yv543eVYVcPtNUhNhmo8FsNVxQZuezMl3rfDJErIvqNJt1CA==",
+      "type": "package",
+      "path": "rabbitmq.client/6.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net461/RabbitMQ.Client.dll",
+        "lib/net461/RabbitMQ.Client.xml",
+        "lib/netstandard2.0/RabbitMQ.Client.dll",
+        "lib/netstandard2.0/RabbitMQ.Client.xml",
+        "rabbitmq.client.6.3.1.nupkg.sha512",
+        "rabbitmq.client.nuspec"
+      ]
+    },
     "System.Collections.Immutable/6.0.1": {
       "sha512": "Cc+SfP+jyCmA1TnRnDA7cRZy5jbLyWodfuUJKDJ+PJZBwWkv8szz+ztSCHAonqnL01DRaHaS2ptc4bYIEdgvWw==",
       "type": "package",
@@ -2674,6 +2720,30 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Threading.Channels/4.7.1": {
+      "sha512": "6akRtHK/wab3246t4p5v3HQrtQk8LboOt5T4dtpNgsp3zvDeM4/Gx8V12t0h+c/W9/enUrilk8n6EQqdQorZAA==",
+      "type": "package",
+      "path": "system.threading.channels/4.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Threading.Channels.dll",
+        "lib/net461/System.Threading.Channels.xml",
+        "lib/netcoreapp3.0/System.Threading.Channels.dll",
+        "lib/netcoreapp3.0/System.Threading.Channels.xml",
+        "lib/netstandard1.3/System.Threading.Channels.dll",
+        "lib/netstandard1.3/System.Threading.Channels.xml",
+        "lib/netstandard2.0/System.Threading.Channels.dll",
+        "lib/netstandard2.0/System.Threading.Channels.xml",
+        "system.threading.channels.4.7.1.nupkg.sha512",
+        "system.threading.channels.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Threading.Tasks.Extensions/4.5.4": {
       "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "type": "package",
@@ -2727,6 +2797,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.36",
       "Microsoft.Extensions.Configuration.Json >= 6.0.1",
       "ModelLayer >= 1.0.0",
+      "RabbitMQ.Client >= 6.3.1",
       "System.Security.Permissions >= 9.0.2"
     ]
   },
@@ -2802,6 +2873,10 @@
           "Microsoft.Extensions.Configuration.Json": {
             "target": "Package",
             "version": "[6.0.1, )"
+          },
+          "RabbitMQ.Client": {
+            "target": "Package",
+            "version": "[6.3.1, )"
           },
           "System.Security.Permissions": {
             "target": "Package",

@@ -237,3 +237,6 @@
 /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/obj/Debug/net6.0/HelloGreetingApplication.genruntimeconfig.cache
 /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/obj/Debug/net6.0/ref/HelloGreetingApplication.dll
 /Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/bin/Debug/net6.0/Pipelines.Sockets.Unofficial.dll
+/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/bin/Debug/net6.0/StackExchange.Redis.dll
+/Users/rahulkumarair/Desktop/GreetingsApp/LatestGreeting/GreetingApp_2115500117/HelloGreetingApplication/HelloGreetingApplication/bin/Debug/net6.0/RabbitMQ.Client.dll
